@@ -17,10 +17,10 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 | Part | Focus Area | What I Learned |
 |------|------------|----------------|
 | [Part 1](zero-to-snowflake/part-1/) | Setup & Basic Queries | Database creation, basic SELECT queries, schema structure |
-| [Part 2](zero-to-snowflake/part-2/) | Data Loading | COPY INTO, staging files, bulk ingestion |
-| [Part 3](zero-to-snowflake/part-3/) | Transformations | SQL transformations, semi-structured data handling |
-| [Part 4](zero-to-snowflake/part-4/) | Warehouses | Compute scaling, performance tuning, concurrency |
-| [Part 5](zero-to-snowflake/part-5/) | Advanced Features | Time Travel, data recovery, dynamic tables |
+| [Part 2](zero-to-snowflake/part-2/) | Simple Data Pipeline | COPY INTO, staging files, bulk ingestion |
+| [Part 3](zero-to-snowflake/part-3/) | Cortex AI | Cortex Playground, semi-structured data handling |
+| [Part 4](zero-to-snowflake/part-4/) | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
+| [Part 5](zero-to-snowflake/part-5/) | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
 
 ---
 
@@ -34,17 +34,19 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 # 📁 Repository Structure
 
+```
 snowflake/
 ├── zero-to-snowflake/
 │   ├── part-1/   ← setup + basics
-│   ├── part-2/   ← loading data
-│   ├── part-3/   ← transformations
-│   ├── part-4/   ← warehouses
-│   ├── part-5/   ← advanced features
-│
+│   ├── part-2/   ← Simple Data Pipeline
+│   ├── part-3/   ← Cortex AI
+│   ├── part-4/   ← Governance Features in Snowflake Horizon
+│   ├── part-5/   ← Apps & Collaboration
+├── quickstarts/  ← additional quickstarts (coming soon)
 ├── queries/      ← standalone SQL exercises
 ├── notes/        ← SnowPro Core study notes
 └── README.md
+```
 
 ---
 
