@@ -36,16 +36,15 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 snowflake/
 ├── zero-to-snowflake/
-│ ├── part-1/
-│ ├── part-2/
-│ ├── part-3/
-│ ├── part-4/
-│ ├── part-5/
-├── quickstarts/
-├── queries/
-├── notes/
+│   ├── part-1/   ← setup + basics
+│   ├── part-2/   ← loading data
+│   ├── part-3/   ← transformations
+│   ├── part-4/   ← warehouses
+│   ├── part-5/   ← advanced features
+│
+├── queries/      ← standalone SQL exercises
+├── notes/        ← SnowPro Core study notes
 └── README.md
-
 
 ---
 
