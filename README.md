@@ -1,18 +1,35 @@
-# Snowflake Quickstarts & SnowPro Core Prep
+# Snowflake
 ![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20Data%20Platform-29B5E8) ![SQL](https://img.shields.io/badge/SQL-Intermediate-orange) ![Status](https://img.shields.io/badge/SnowPro%20Core-In%20Progress-yellow)
 
-A portfolio of hands-on Snowflake quickstarts and SQL exercises covering core platform features — built to develop practical cloud data warehousing skills in preparation for the SnowPro Core certification.
+A portfolio of hands-on Snowflake quickstarts, SQL exercises, and data pipeline projects — built to develop practical cloud data warehousing skills in preparation for the SnowPro Core certification.
 
 ---
 
-## 🗂️ Repository Structure
+## 📂 Repository Structure
 
-| Folder | Description |
-|--------|-------------|
-| `quickstarts/` | Guided quickstart projects covering key Snowflake features |
-| `queries/` | SQL scripts and reusable query examples |
-| `pipelines/` | Data loading and transformation workflows |
-| `notes/` | Study notes and reference material for SnowPro Core prep |
+```
+snowflake/
+├── README.md
+├── zero-to-snowflake/        ← guided quickstart follow-along
+│   ├── README.md
+│   ├── part-1/
+│   ├── part-2/
+│   ├── part-3/
+│   ├── part-4/
+│   └── part-5/
+├── quickstarts/              ← additional quickstarts (coming soon)
+├── queries/                  ← standalone SQL scripts and exercises
+└── notes/                    ← SnowPro Core study notes and reference material
+```
+
+---
+
+## 🗂️ Projects
+
+| Project | Description | Status |
+|---------|-------------|--------|
+| [Zero to Snowflake](zero-to-snowflake/) | Official Snowflake quickstart — follow-along covering core platform features | 🔄 3 of 5 parts complete |
+| More quickstarts | Additional guided projects coming as cert prep continues | ⏳ Coming soon |
 
 ---
 
