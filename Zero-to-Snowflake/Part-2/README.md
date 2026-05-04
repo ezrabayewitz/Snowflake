@@ -1,4 +1,4 @@
-# Part 2 – Zero to Snowflake (Simple Data Pipeline)
+# Part 2 – Simple Data Pipeline
 
 ## Overview
 This section focuses on building a simple end-to-end data pipeline in Snowflake using external ingestion, semi-structured data processing, and dynamic tables.
@@ -68,20 +68,20 @@ Snowflake visualizes table dependencies as a Directed Acyclic Graph for monitori
 # Data Pipeline Flow
 
 
+```text
 S3 External Data
-↓
+        ↓
 Raw Stage (menu_stage)
-↓
+        ↓
 Staging Table (menu_staging)
-↓
+        ↓
 Ingredient Extraction (VARIANT parsing)
-↓
+        ↓
 ingredient table (dynamic)
-↓
+        ↓
 ingredient_to_menu_lookup (dynamic)
-↓
+        ↓
 ingredient_usage_by_truck (dynamic)
-
 
 ---
 
