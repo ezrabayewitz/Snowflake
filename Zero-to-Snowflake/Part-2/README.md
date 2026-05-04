@@ -67,6 +67,7 @@ Snowflake visualizes table dependencies as a Directed Acyclic Graph for monitori
 
 # Data Pipeline Flow
 
+
 S3 External Data
 ↓
 Raw Stage (menu_stage)
@@ -80,3 +81,21 @@ ingredient table (dynamic)
 ingredient_to_menu_lookup (dynamic)
 ↓
 ingredient_usage_by_truck (dynamic)
+
+
+---
+
+# Files in This Part
+
+
+part-2/
+├── README.md
+└── queries.sql
+
+---
+
+# Notes
+
+- This lab demonstrates a fully automated transformation pipeline using Snowflake-native features.
+- Dynamic Tables handle orchestration without external tools like Airflow or dbt.
+- All transformations are declarative and auto-refreshed based on defined lag intervals.
