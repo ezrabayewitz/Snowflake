@@ -1,4 +1,4 @@
-# Part 1 – Zero to Snowflake (Getting Started)
+# Part 1 – Getting Started with Snowflake
 
 ## Overview
 This project is a structured implementation of Snowflake’s official “Getting Started with Snowflake” quickstart lab. It demonstrates foundational concepts in cloud data warehousing, SQL execution, and Snowflake’s core platform architecture.
