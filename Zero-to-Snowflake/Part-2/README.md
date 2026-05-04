@@ -89,14 +89,14 @@ ingredient_usage_by_truck (dynamic)
 
 ## Tech Stack
 
-- Snowflake Cloud Data Platform
-- SQL 
-- Amazon S3 (external data storage for staging)
-- VARIANT / JSON (semi-structured data handling)
-- FLATTEN function (array expansion for analysis)
-- Dynamic Tables (automated ELT pipeline layer)
-- Virtual Warehouses (compute layer for query execution)
-- Snowsight (Snowflake web UI for development and monitoring)
+| Component | Purpose |
+|-----------|---------|
+| External Stages (S3) | Cloud data ingestion from Amazon S3 |
+| VARIANT Data Type | Semi-structured JSON parsing & querying |
+| LATERAL FLATTEN | Unnesting nested arrays and JSON objects |
+| Dynamic Tables | Declarative, auto-refreshing transformation pipeline |
+| DAG Visualization | Pipeline orchestration & monitoring |
+| COPY INTO | Bulk data loading from stage to table |
 
 ---
 
