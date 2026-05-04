@@ -1,10 +1,14 @@
-# ❄️ Zero to Snowflake
+# Zero to Snowflake
 
-A structured, hands-on walkthrough of Snowflake fundamentals, following the official Zero to Snowflake quickstart series. This project documents my learning process as I build practical skills in cloud data warehousing using Snowflake.
+A structured, hands-on walkthrough of Snowflake's key fundamentals, following the official Zero to Snowflake quickstart series. This project documents my learning process as I build practical skills in cloud data warehousing using Snowflake.
+
+Concepts applied using a sample dataset called Tasty Bytes.
+
+
 
 ---
 
-# 🎯 Objective
+# Objective
 
 To gain practical experience with core Snowflake concepts including:
 - Data loading and transformation
@@ -23,7 +27,7 @@ To gain hands-on experience in the following areas:
 
 ---
 
-# 📚 Project Structure
+# Project Structure
 
 ```
 Zero-to-Snowflake/
@@ -49,7 +53,7 @@ Zero-to-Snowflake/
 
 ---
 
-# 🧭 Learning Progress
+# Learning Progress
 
 ## Part 1 – Getting Started with Snowflake
 
@@ -66,13 +70,11 @@ Explored Snowflake's complete AI platform through a progressive journey from exp
 ## Part 4 – 
 
 
-## ⏳ Part 5 – Advanced Features
-- Time Travel
-- Data recovery
-- Dynamic tables
+## Part 5 – 
+
 
 ---
 
-# 🔗 Notes
+# Notes
 
 This repository is actively updated as I progress through each quickstart module and expand into more advanced Snowflake use cases.
