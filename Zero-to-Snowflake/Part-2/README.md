@@ -85,15 +85,6 @@ ingredient_usage_by_truck (dynamic)
 
 ---
 
-# Files in This Part
-
-
-part-2/
-├── README.md
-└── queries.sql
-
----
-
 # Notes
 
 - This lab demonstrates a fully automated transformation pipeline using Snowflake-native features.
