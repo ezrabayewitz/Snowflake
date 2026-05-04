@@ -89,8 +89,8 @@ ingredient_usage_by_truck (dynamic)
 
 ## Tech Stack
 
-- Snowflake (cloud data platform)
-- SQL (data querying and transformation)
+- Snowflake Cloud Data Platform
+- SQL 
 - Amazon S3 (external data storage for staging)
 - VARIANT / JSON (semi-structured data handling)
 - FLATTEN function (array expansion for analysis)
