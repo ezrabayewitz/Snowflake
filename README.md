@@ -51,23 +51,20 @@ Zero-to-Snowflake/
 
 # 🧭 Learning Progress
 
-## ✅ Part 1 – Getting Started with Snowflake
-- Created and explored databases, schemas, and tables
-- Ran basic SELECT queries
-- Learned Snowflake object hierarchy and UI navigation
+## Part 1 – Getting Started with Snowflake
 
-## 🔄 Part 2 – Data Loading (In Progress)
-- Loading data using `COPY INTO`
-- Working with staged files
-- Understanding file formats and ingestion workflows
+Learned about core Snowflake concepts by exploring Virtual Warehouses, using the query results cache, performing basic data transformations, leveraging data recovery with Time Travel, and monitoring account with Resource Monitors and Budgets
 
-## ⏳ Part 3 – Data Transformation
-- SQL transformations
-- Working with semi-structured data (JSON, Parquet)
+## Part 2 – Data Pipeline
 
-## ⏳ Part 4 – Warehouses & Performance
-- Virtual warehouse configuration
-- Scaling and compute optimization
+Learned how to build a simple, automated data pipeline in Snowflake. Started by ingesting raw, semi-structured data from an external stage, and then used the power of Snowflake's Dynamic Tables to transform and enrich that data, creating a pipeline that automatically stays up-to-date as new data arrives.
+
+## Part 3 – Cortex AI
+
+Explored Snowflake's complete AI platform through a progressive journey from experimentation into unified business intelligence. Learned AI capabilities by building a comprehensive customer intelligence system using Cortex Playground for AI experimentation, Cortex AI Functions for production-scale analysis, Cortex Search for semantic text searching, and Cortex Analyst for natural language analytics.
+
+## Part 4 – 
+
 
 ## ⏳ Part 5 – Advanced Features
 - Time Travel
