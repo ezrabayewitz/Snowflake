@@ -1,97 +1,107 @@
-# ❄️ Snowflake Portfolio
+# ❄️ Zero to Snowflake
 
-![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20Data%20Platform-29B5E8)
-![SQL](https://img.shields.io/badge/SQL-Intermediate-orange)
-![Status](https://img.shields.io/badge/SnowPro%20Core-In%20Progress-yellow)
-
-A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and data projects focused on building practical cloud data warehousing skills in preparation for the SnowPro Core certification.
+A structured, hands-on walkthrough of Snowflake fundamentals, following the official Zero to Snowflake quickstart series. This project documents my learning process as I build practical skills in cloud data warehousing using Snowflake.
 
 ---
 
-# 📊 Projects Overview
+# 🎯 Objective
 
-## ❄️ Zero to Snowflake (Core Quickstart Series)
+To gain practical experience with core Snowflake concepts including:
+- Data loading and transformation
+- Virtual warehouse management
+- Querying structured and semi-structured data
+- Time Travel and data recovery features
+- Building foundational SQL fluency in a cloud environment
 
-> Guided end-to-end exploration of Snowflake fundamentals — from setup to advanced data features.
-
-| Part | Focus Area | What I Learned |
-|------|------------|----------------|
-| [Part 1](zero-to-snowflake/part-1/) | Setup & Basic Queries | Created, configured, & scaled a Virtual Warehouse; Query Result Cache; Zero-Copy Cloning; Transfored & cleaned data; Recovered dropped table using UNDROP; Created & applied Resource Monitor; Created Budget; Used Universal Search |
-| [Part 2](zero-to-snowflake/part-2/) | Simple Data Pipeline | Ingested data from an external S3 stage; Queried and transformed semi-structured VARIANT data; Used the FLATTEN function to parse arrays; Created and chained Dynamic Tables; Learned how an ELT pipeline automatically processes new data; Visualized a pipeline using the Directed Acyclic Graph (DAG) |
-| [Part 3](zero-to-snowflake/part-3/) | Cortex AI | Cortex Playground for AI model testing & optimization; Cortex AI Functions for systematic customer feedback processing; Cortex Search for instant customer feedback discovery & operational intelligence; Cortex Analyst for conversational data exploration |
-| [Part 4](zero-to-snowflake/part-4/) | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
-| [Part 5](zero-to-snowflake/part-5/) | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
-
----
-
-## 🧪 Additional Quickstarts (In Progress)
-
-| Project | Description | Status |
-|----------|-------------|------|
-| Coming soon | Extended SQL practice and applied analytics labs | ⏳ Planned |
+To gain hands-on experience in the following areas:
+- A comprehensive understanding of the core Snowflake platform.
+- Configured Virtual Warehouses.
+- An automated ELT pipeline with Dynamic Tables.
+- A complete intelligence customer analytics platform leveraging Snowflake AI.
+- A robust data governance framework with roles and policies.
+- Enriched analytical views combining first- and third-party data.
 
 ---
 
-# 📁 Repository Structure
+# 📚 Project Structure
 
 ```
-snowflake/
-├── zero-to-snowflake/
-│   ├── part-1/   ← setup + basics
-│   ├── part-2/   ← Simple Data Pipeline
-│   ├── part-3/   ← Cortex AI
-│   ├── part-4/   ← Governance Features in Snowflake Horizon
-│   ├── part-5/   ← Apps & Collaboration
-├── quickstarts/  ← additional quickstarts (coming soon)
-├── queries/      ← standalone SQL exercises
-├── notes/        ← SnowPro Core study notes
-└── README.md
+Zero-to-Snowflake/
+├── README.md
+├── Part-1/
+│   ├── README.md
+│   └── queries.sql
+├── Part-2/
+│   ├── README.md
+│   └── queries.sql
+├── Part-3/
+│   ├── README.md
+│   └── queries.sql
+├── Part-4/
+│   ├── README.md
+│   └── queries.sql
+├── Part-5/
+│   ├── README.md
+│   └── queries.sql
+
 ```
+
 
 ---
 
-# 📌 What I Built & Learned
+# 🧭 Learning Progress
 
-## Loading & Transforming Data
-- Built pipelines using COPY INTO
-- Transformed raw data into analytics-ready tables
-- Worked with JSON and semi-structured formats
+## ✅ Part 1 – Getting Started with Snowflake
+- Created and explored databases, schemas, and tables
+- Ran basic SELECT queries
+- Learned Snowflake object hierarchy and UI navigation
 
-## Compute & Performance
-- Configured virtual warehouses for workload optimization
-- Tested auto-suspend and auto-resume behavior
-- Explored scaling and concurrency concepts
+## 🔄 Part 2 – Data Loading (In Progress)
+- Loading data using `COPY INTO`
+- Working with staged files
+- Understanding file formats and ingestion workflows
 
-## Data Reliability
-- Used Time Travel for historical queries and recovery
-- Practiced rollback and data restoration strategies
+## ⏳ Part 3 – Data Transformation
+- SQL transformations
+- Working with semi-structured data (JSON, Parquet)
 
-## Modern Data Pipelines
-- Explored dynamic tables for automated transformations
-- Understood lightweight orchestration inside Snowflake
+## ⏳ Part 4 – Warehouses & Performance
+- Virtual warehouse configuration
+- Scaling and compute optimization
+
+## ⏳ Part 5 – Advanced Features
+- Time Travel
+- Data recovery
+- Dynamic tables
 
 ---
 
 # 🛠️ Tech Stack
 
-| Category | Tools |
-|----------|------|
-| Platform | Snowflake |
-| Language | SQL |
-| Data Formats | CSV, JSON, Parquet |
-| Interface | Snowflake UI, SnowSQL |
+- **Platform:** Snowflake
+- **Language:** SQL
+- **Data Formats:** CSV, JSON, Parquet
+- **Interface:** Snowflake Web UI, SQL Worksheets
 
 ---
 
-# 📜 Certification
+# 📈 Key Skills Being Developed
+
+- Cloud data warehousing fundamentals
+- SQL querying and analytics
+- Data ingestion pipelines
+- Query optimization basics
+- Working with structured & semi-structured data
+
+---
+
+# 📜 Certification Goal
 
 **SnowPro Core Certification (Snowflake)**  
-Status: In Progress  
-Candidate: Ezra Bayewitz  
+Status: In Progress
 
 ---
 
-# 🔗 Connect
+# 🔗 Notes
 
-- 💼 LinkedIn: https://www.linkedin.com/in/ezra-bayewitz  
-- 🌐 Portfolio: coming soon
+This repository is actively updated as I progress through each quickstart module and expand into more advanced Snowflake use cases.
