@@ -16,11 +16,11 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 | Part | Focus Area | What I Learned |
 |------|------------|----------------|
-| [Part 1] | Setup & Basic Queries | Created, configured, & scaled a Virtual Warehouse; Query Result Cache; Zero-Copy Cloning; Transfored & cleaned data; Recovered dropped table using UNDROP; Created & applied Resource Monitor; Created Budget; Used Universal Search |
-| [Part 2] | Simple Data Pipeline | Ingested data from an external S3 stage; Queried and transformed semi-structured VARIANT data; Used the FLATTEN function to parse arrays; Created and chained Dynamic Tables; Learned how an ELT pipeline automatically processes new data; Visualized a pipeline using the Directed Acyclic Graph (DAG) |
-| [Part 3] | Cortex AI | Cortex Playground for AI model testing & optimization; Cortex AI Functions for systematic customer feedback processing; Cortex Search for instant customer feedback discovery & operational intelligence; Cortex Analyst for conversational data exploration |
-| [Part 4] | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
-| [Part 5] | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
+| Part 1 | Setup & Basic Queries | Created, configured, & scaled a Virtual Warehouse; Query Result Cache; Zero-Copy Cloning; Transfored & cleaned data; Recovered dropped table using UNDROP; Created & applied Resource Monitor; Created Budget; Used Universal Search |
+| Part 2 | Simple Data Pipeline | Ingested data from an external S3 stage; Queried and transformed semi-structured VARIANT data; Used the FLATTEN function to parse arrays; Created and chained Dynamic Tables; Learned how an ELT pipeline automatically processes new data; Visualized a pipeline using the Directed Acyclic Graph (DAG) |
+| Part 3 | Cortex AI | Cortex Playground for AI model testing & optimization; Cortex AI Functions for systematic customer feedback processing; Cortex Search for instant customer feedback discovery & operational intelligence; Cortex Analyst for conversational data exploration |
+| Part 4 | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
+| Part 5 | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
 
 ---
 
