@@ -82,6 +82,8 @@ ingredient table (dynamic)
 ingredient_to_menu_lookup (dynamic)
         ↓
 ingredient_usage_by_truck (dynamic)
+```
+
 
 ---
 
