@@ -1,4 +1,4 @@
-# ❄️ Snowflake Portfolio
+# Snowflake Portfolio
 
 ![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20Data%20Platform-29B5E8)
 ![SQL](https://img.shields.io/badge/SQL-Intermediate-orange)
@@ -8,9 +8,9 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 ---
 
-# 📊 Projects Overview
+# Projects Overview
 
-## ❄️ Zero to Snowflake (Core Quickstart Series)
+## Zero to Snowflake (Core Quickstart Series)
 
 > Guided end-to-end exploration of Snowflake fundamentals — from setup to advanced data features.
 
@@ -24,7 +24,7 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 ---
 
-## 🧪 Additional Quickstarts (In Progress)
+## Additional Quickstarts (In Progress)
 
 | Project | Description | Status |
 |----------|-------------|------|
@@ -32,7 +32,7 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 ---
 
-# 📁 Repository Structure
+# Repository Structure
 
 ```
 Snowflake/
@@ -50,7 +50,7 @@ Snowflake/
 
 ---
 
-# 📌 What I Built & Learned
+# What I Built & Learned
 
 ## Loading & Transforming Data
 - Built pipelines using COPY INTO
@@ -72,7 +72,7 @@ Snowflake/
 
 ---
 
-# 🛠️ Tech Stack
+# Tech Stack
 
 | Category | Tools |
 |----------|------|
@@ -83,7 +83,7 @@ Snowflake/
 
 ---
 
-# 📜 Certification
+# Certification
 
 **SnowPro Core Certification (Snowflake)**  
 Status: In Progress  
@@ -91,7 +91,7 @@ Candidate: Ezra Bayewitz
 
 ---
 
-# 🔗 Connect
+# Connect
 
 - 💼 LinkedIn: https://www.linkedin.com/in/ezra-bayewitz  
 - 🌐 Portfolio: coming soon
