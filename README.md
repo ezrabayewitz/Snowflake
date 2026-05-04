@@ -76,32 +76,6 @@ Zero-to-Snowflake/
 
 ---
 
-# 🛠️ Tech Stack
-
-- **Platform:** Snowflake
-- **Language:** SQL
-- **Data Formats:** CSV, JSON, Parquet
-- **Interface:** Snowflake Web UI, SQL Worksheets
-
----
-
-# 📈 Key Skills Being Developed
-
-- Cloud data warehousing fundamentals
-- SQL querying and analytics
-- Data ingestion pipelines
-- Query optimization basics
-- Working with structured & semi-structured data
-
----
-
-# 📜 Certification Goal
-
-**SnowPro Core Certification (Snowflake)**  
-Status: In Progress
-
----
-
 # 🔗 Notes
 
 This repository is actively updated as I progress through each quickstart module and expand into more advanced Snowflake use cases.
