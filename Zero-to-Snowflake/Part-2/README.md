@@ -1,93 +1,24 @@
-# Part 2 – Simple Data Pipeline
+## Data Pipeline
 
-## Overview
-This section focuses on building a simple end-to-end data pipeline in Snowflake using external ingestion, semi-structured data processing, and dynamic tables.
+Built an end-to-end data pipeline in Snowflake to ingest, transform, and track ingredient usage across Tasty Bytes food truck operations.
 
-The goal is to simulate a real-world data engineering workflow where raw data is ingested, transformed, and aggregated automatically through a governed pipeline.
+### Pipeline Architecture
 
----
+1. **Ingestion** — Loaded raw menu CSV data from an Amazon S3 external stage into a staging table using `COPY INTO`
+2. **Semi-Structured Parsing** — Extracted nested JSON health metrics and ingredient arrays from VARIANT columns using colon notation, bracket indexing, and `LATERAL FLATTEN`
+3. **Dynamic Table Pipeline** — Created a chain of auto-refreshing Dynamic Tables that declaratively transform raw data into analytics-ready views:
+   - `INGREDIENT` — Distinct ingredients with associated menu IDs
+   - `INGREDIENT_TO_MENU_LOOKUP` — Maps ingredients to individual menu items
+   - `INGREDIENT_USAGE_BY_TRUCK` — Monthly ingredient consumption per truck (US only)
+4. **DAG Visualization** — Monitored pipeline dependencies and refresh status via Snowflake's built-in Directed Acyclic Graph
 
-# Objectives
+### Key Concepts
 
-In this project, I worked through:
+- Automatic downstream refresh — inserting a new menu item (e.g., Banh Mi) propagates through the entire pipeline without manual intervention
+- Declarative transformations — Dynamic Tables define *what* the data should look like, not *how* to update it
+- Target lag configuration — each table specifies its freshness SLA (1–2 minutes)
 
-- Loading external data from Amazon S3 into Snowflake stages
-- Ingesting structured data using COPY INTO
-- Working with semi-structured JSON data using VARIANT types
-- Flattening nested arrays for relational analysis
-- Building automated pipelines using Dynamic Tables
-- Creating downstream transformations with dependency chains
-- Visualizing pipeline flow using DAG (Directed Acyclic Graphs)
-
----
-
-# Pipeline Architecture
-
-### 1. Data Ingestion
-- External stage connected to S3 bucket
-- Raw menu data loaded into Snowflake staging table
-
-### 2. Semi-Structured Processing
-- JSON-based menu health metrics stored in VARIANT columns
-- Extracted nested values using colon syntax and FLATTEN
-
-### 3. Transformation Layer
-- Converted raw ingestion into structured ingredient-level dataset
-- Built reusable ingredient-to-menu mappings
-
-### 4. Dynamic Tables Pipeline
-- Created automated refresh tables with LAG-based scheduling
-- Built multi-layer dependency chain:
-  - ingredient → ingredient_to_menu_lookup → ingredient_usage_by_truck
-
-### 5. Operational Simulation
-- Inserted new menu items and orders
-- Verified automatic propagation through dynamic tables
-
----
-
-# Key Concepts Learned
-
-## External Staging
-Snowflake can directly reference external cloud storage (S3) without ingestion until COPY INTO is executed.
-
-## VARIANT Data Type
-Enables storage and querying of semi-structured JSON data inside relational tables.
-
-## FLATTEN Function
-Used to explode arrays into relational rows for analysis.
-
-## Dynamic Tables
-Declarative, automatically refreshed tables that eliminate the need for manual ETL scheduling.
-
-## Pipeline DAG
-Snowflake visualizes table dependencies as a Directed Acyclic Graph for monitoring data lineage.
-
----
-
-# Data Pipeline Flow
-
-
-```text
-S3 External Data
-        ↓
-Raw Stage (menu_stage)
-        ↓
-Staging Table (menu_staging)
-        ↓
-Ingredient Extraction (VARIANT parsing)
-        ↓
-ingredient table (dynamic)
-        ↓
-ingredient_to_menu_lookup (dynamic)
-        ↓
-ingredient_usage_by_truck (dynamic)
-```
-
-
----
-
-## Tech Stack
+### Tech Stack
 
 | Component | Purpose |
 |-----------|---------|
@@ -96,12 +27,5 @@ ingredient_usage_by_truck (dynamic)
 | LATERAL FLATTEN | Unnesting nested arrays and JSON objects |
 | Dynamic Tables | Declarative, auto-refreshing transformation pipeline |
 | DAG Visualization | Pipeline orchestration & monitoring |
-| COPY INTO | Bulk data loading from stage to table |
-
----
-
-# Notes
-
-- This lab demonstrates a fully automated transformation pipeline using Snowflake-native features.
-- Dynamic Tables handle orchestration without external tools like Airflow or dbt.
+| COPY INTO | Bulk data loading from stage to table | dbt.
 - All transformations are declarative and auto-refreshed based on defined lag intervals.
