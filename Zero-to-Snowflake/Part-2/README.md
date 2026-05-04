@@ -87,6 +87,19 @@ ingredient_usage_by_truck (dynamic)
 
 ---
 
+## Tech Stack
+
+- Snowflake (cloud data platform)
+- SQL (data querying and transformation)
+- Amazon S3 (external data storage for staging)
+- VARIANT / JSON (semi-structured data handling)
+- FLATTEN function (array expansion for analysis)
+- Dynamic Tables (automated ELT pipeline layer)
+- Virtual Warehouses (compute layer for query execution)
+- Snowsight (Snowflake web UI for development and monitoring)
+
+---
+
 # Notes
 
 - This lab demonstrates a fully automated transformation pipeline using Snowflake-native features.
