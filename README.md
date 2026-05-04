@@ -35,13 +35,13 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 # 📁 Repository Structure
 
 ```
-snowflake/
-├── zero-to-snowflake/
-│   ├── part-1/   ← setup + basics
-│   ├── part-2/   ← Simple Data Pipeline
-│   ├── part-3/   ← Cortex AI
-│   ├── part-4/   ← Governance Features in Snowflake Horizon
-│   ├── part-5/   ← Apps & Collaboration
+Snowflake/
+├── Zero-to-snowflake/
+│   ├── Part-1/   ← setup + basics
+│   ├── Part-2/   ← Simple Data Pipeline
+│   ├── Part-3/   ← Cortex AI
+│   ├── Part-4/   ← Governance Features in Snowflake Horizon
+│   ├── Part-5/   ← Apps & Collaboration
 ├── quickstarts/  ← additional quickstarts (coming soon)
 ├── queries/      ← standalone SQL exercises
 ├── notes/        ← SnowPro Core study notes
