@@ -18,7 +18,7 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 |------|------------|----------------|
 | [Part 1](zero-to-snowflake/part-1/) | Setup & Basic Queries | Database creation, basic SELECT queries, schema structure |
 | [Part 2](zero-to-snowflake/part-2/) | Simple Data Pipeline | COPY INTO, staging files, bulk ingestion |
-| [Part 3](zero-to-snowflake/part-3/) | Cortex AI | Cortex Playground for AI model testing & optimization, semi-structured data handling |
+| [Part 3](zero-to-snowflake/part-3/) | Cortex AI | Cortex Playground for AI model testing & optimization, Cortex AI Functions for systematic customer feedback processing |
 | [Part 4](zero-to-snowflake/part-4/) | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
 | [Part 5](zero-to-snowflake/part-5/) | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
 
