@@ -50,39 +50,6 @@ Snowflake/
 
 ---
 
-# What I Built & Learned
-
-## Loading & Transforming Data
-- Built pipelines using COPY INTO
-- Transformed raw data into analytics-ready tables
-- Worked with JSON and semi-structured formats
-
-## Compute & Performance
-- Configured virtual warehouses for workload optimization
-- Tested auto-suspend and auto-resume behavior
-- Explored scaling and concurrency concepts
-
-## Data Reliability
-- Used Time Travel for historical queries and recovery
-- Practiced rollback and data restoration strategies
-
-## Modern Data Pipelines
-- Explored dynamic tables for automated transformations
-- Understood lightweight orchestration inside Snowflake
-
----
-
-# Tech Stack
-
-| Category | Tools |
-|----------|------|
-| Platform | Snowflake |
-| Language | SQL |
-| Data Formats | CSV, JSON, Parquet |
-| Interface | Snowflake UI, SnowSQL |
-
----
-
 # Certification
 
 **SnowPro Core Certification (Snowflake)**  
