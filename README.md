@@ -1,2 +1,63 @@
-# Snowflake
-A collection of Snowflake quickstarts, SQL queries, and data pipeline exercises built while preparing for the SnowPro Core certification. Demonstrates practical experience with Snowflake's core features and cloud data warehousing concepts.
+# Snowflake Quickstarts & SnowPro Core Prep
+![Snowflake](https://img.shields.io/badge/Snowflake-Cloud%20Data%20Platform-29B5E8) ![SQL](https://img.shields.io/badge/SQL-Intermediate-orange) ![Status](https://img.shields.io/badge/SnowPro%20Core-In%20Progress-yellow)
+
+A portfolio of hands-on Snowflake quickstarts and SQL exercises covering core platform features — built to develop practical cloud data warehousing skills in preparation for the SnowPro Core certification.
+
+---
+
+## 🗂️ Repository Structure
+
+| Folder | Description |
+|--------|-------------|
+| `quickstarts/` | Guided quickstart projects covering key Snowflake features |
+| `queries/` | SQL scripts and reusable query examples |
+| `pipelines/` | Data loading and transformation workflows |
+| `notes/` | Study notes and reference material for SnowPro Core prep |
+
+---
+
+## ❄️ Topics Covered
+
+### Loading & Transforming Data
+- Bulk loading with COPY INTO from staged files
+- Data transformation using SQL and streams
+- Working with semi-structured data (JSON, Parquet)
+
+### Virtual Warehouses
+- Creating and sizing virtual warehouses
+- Auto-suspend and auto-resume configuration
+- Multi-cluster warehouse setup for concurrency
+
+### Time Travel
+- Querying historical data using AT and BEFORE clauses
+- Restoring dropped tables and recovering previous data states
+- Configuring data retention periods
+
+### Dynamic Tables
+- Defining dynamic tables for automated data transformation
+- Setting target lag and refresh schedules
+- Building lightweight transformation pipelines without manual orchestration
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| Platform | Snowflake |
+| Language | SQL, SnowSQL |
+| Data Formats | CSV, JSON, Parquet |
+| Environment | Snowflake Web UI, SnowSQL CLI |
+
+---
+
+## 📜 Certification
+**SnowPro Core Certification** — Snowflake
+Status: In progress
+Candidate: Ezra Bayewitz
+
+---
+
+## 🔗 Connect
+- 💼 [LinkedIn](https://www.linkedin.com/in/ezra-bayewitz)
+- 🌐 Portfolio: coming soon
