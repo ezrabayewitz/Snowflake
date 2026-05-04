@@ -1,102 +1,26 @@
-# Part 1 – Getting Started with Snowflake
+## Getting Started with Snowflake
 
-## Overview
-This project is a structured implementation of Snowflake’s official “Getting Started with Snowflake” quickstart lab. It demonstrates foundational concepts in cloud data warehousing, SQL execution, and Snowflake’s core platform architecture.
+Explored Snowflake's core platform capabilities through hands-on configuration and data operations using the Tasty Bytes food truck dataset.
 
-All work was executed in a Snowflake worksheet environment and documented for learning and portfolio purposes.
+### What's Covered
 
----
+1. **Virtual Warehouses** — Created and configured compute warehouses with auto-suspend, auto-resume, and elastic scaling (XSmall → XLarge on the fly)
+2. **Query Result Cache** — Demonstrated Snowflake's persisted query results, reducing repeat query execution from seconds to milliseconds with zero compute cost
+3. **Data Transformation** — Extracted structured columns from semi-structured VARIANT/JSON data using colon notation and casting, then cleaned data quality issues (e.g., `Ford_` → `Ford`)
+4. **Zero Copy Cloning** — Created instant, storage-free dev copies of production tables for safe transformation work, then atomically swapped into production
+5. **Data Recovery (UNDROP)** — Restored accidentally dropped tables using Snowflake's Time Travel feature
+6. **Resource Monitors** — Set credit quotas with threshold-based actions (notify at 75%, suspend at 90%, kill at 100%)
+7. **Budgets** — Created spending limits across any Snowflake object or service with email notifications
+8. **Universal Search** — Used natural language search to discover relevant tables, views, Marketplace listings, and documentation
 
-# Objectives
+### Tech Stack
 
-This lab focuses on understanding:
-
-- Virtual warehouse creation and compute scaling
-- Query execution and result caching
-- Semi-structured data transformation (VARIANT types)
-- Zero-copy cloning for safe development workflows
-- Data recovery using Time Travel (UNDROP)
-- Resource monitoring and cost management
-- Budget tracking for cloud spend control
-- Universal search for data discovery
-
----
-
-# Workflow Summary
-
-### 1. Virtual Warehouses
-- Created and configured `my_wh`
-- Adjusted warehouse size and auto-suspend settings
-- Executed queries using dedicated compute resources
-
-### 2. Query Execution & Caching
-- Ran analytical queries on sample datasets
-- Observed query result caching behavior
-- Compared execution times between cold and cached runs
-
-### 3. Data Transformation
-- Extracted structured fields from VARIANT data type
-- Converted semi-structured data into relational columns
-- Performed aggregation and grouping on cleaned data
-
-### 4. Zero-Copy Cloning
-- Created development copy of production table
-- Modified schema safely without impacting original data
-- Demonstrated Snowflake’s storage-efficient cloning system
-
-### 5. Data Cleaning & SWAP Operations
-- Standardized inconsistent values in dataset
-- Used table SWAP for atomic production updates
-
-### 6. Data Recovery (Time Travel)
-- Dropped production table accidentally
-- Restored it using UNDROP
-- Verified data integrity after recovery
-
-### 7. Resource Monitoring
-- Created credit-based resource monitor
-- Assigned monitor to warehouse
-- Configured alerts and automatic suspension rules
-
-### 8. Budgets
-- Created cost-tracking budget object
-- Linked database and warehouse resources
-- Enabled spend visibility and alerts
-
-### 9. Universal Search
-- Explored metadata discovery tools
-- Located objects and documentation using search interface
-
----
-
-# Key Concepts Learned
-
-## Virtual Warehouses
-Compute and storage are decoupled. Warehouses can be scaled independently based on workload demand.
-
-## Query Result Caching
-Snowflake automatically caches query results, significantly improving performance for repeated queries.
-
-## Zero-Copy Cloning
-Instant duplication of database objects without additional storage cost.
-
-## Time Travel
-Ability to restore dropped or modified objects within a retention period.
-
-## Cost Governance
-Resource Monitors and Budgets provide granular control over compute spend.
-
----
-
-# Tech Stack
-
-- Snowflake Cloud Data Platform
-- SQL (ANSI-style)
-- Semi-structured data (VARIANT, JSON)
-- Snowflake UI Worksheets
-
----
-
-# Notes
-
-This lab is based on Snowflake’s official “Getting Started” quickstart and has been reorganized and documented to reflect practical understanding and learning outcomes.
+| Component | Purpose |
+|-----------|---------|
+| Virtual Warehouses | Elastic, scalable compute resources |
+| Zero Copy Cloning | Instant dev/test copies without storage cost |
+| Time Travel & UNDROP | Data recovery and versioning |
+| VARIANT Data Type | Semi-structured JSON storage and querying |
+| Resource Monitors | Warehouse credit usage controls |
+| Budgets | Holistic cost management across services |
+| Universal Search | Natural language object discovery |
