@@ -69,14 +69,7 @@ Explored Snowflake's complete AI platform through a progressive journey from exp
 
 ## Part 4 – Governance with Horizon
 
-This section covers Snowflake's Horizon governance framework across 6 areas:
-
-Roles & Access Control — Creating custom roles with granular privileges (warehouse, database, schema, table-level)
-Auto Classification — Automatically detecting and tagging PII columns (names, emails, phone numbers, DOB) using classification profiles
-Column-Level Masking — Tag-based dynamic masking policies that hide sensitive string/date data for non-admin roles
-Row-Level Security — Row access policies that filter rows by role (e.g., engineers only see US customers)
-Data Quality (DMFs) — System and custom Data Metric Functions to monitor nulls, duplicates, and business rule violations
-Trust Center — Security scanner packages (CIS Benchmarks, Threat Intelligence) for continuous account risk monitoring
+This section covers Snowflake's Horizon governance framework across 6 areas: Roles & Access Control -Creating custom roles with granular privileges; Auto Classification — Automatically detecting and tagging PII columns using classification profiles; Column-Level Masking — Tag-based dynamic masking policies that hide sensitive string/date data for non-admin roles; Row-Level Security — Row access policies that filter rows by role; Data Quality (DMFs) — System and custom Data Metric Functions to monitor nulls, duplicates, and business rule violations; Trust Center — Security scanner packages for continuous account risk monitoring
 
 
 ## Part 5 – 
