@@ -67,7 +67,16 @@ Learned how to build a simple, automated data pipeline in Snowflake. Started by 
 
 Explored Snowflake's complete AI platform through a progressive journey from experimentation into unified business intelligence. Learned AI capabilities by building a comprehensive customer intelligence system using Cortex Playground for AI experimentation, Cortex AI Functions for production-scale analysis, Cortex Search for semantic text searching, and Cortex Analyst for natural language analytics.
 
-## Part 4 – 
+## Part 4 – Governance with Horizon
+
+This section covers Snowflake's Horizon governance framework across 6 areas:
+
+Roles & Access Control — Creating custom roles with granular privileges (warehouse, database, schema, table-level)
+Auto Classification — Automatically detecting and tagging PII columns (names, emails, phone numbers, DOB) using classification profiles
+Column-Level Masking — Tag-based dynamic masking policies that hide sensitive string/date data for non-admin roles
+Row-Level Security — Row access policies that filter rows by role (e.g., engineers only see US customers)
+Data Quality (DMFs) — System and custom Data Metric Functions to monitor nulls, duplicates, and business rule violations
+Trust Center — Security scanner packages (CIS Benchmarks, Threat Intelligence) for continuous account risk monitoring
 
 
 ## Part 5 – 
