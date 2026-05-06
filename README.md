@@ -72,11 +72,14 @@ Explored Snowflake's complete AI platform through a progressive journey from exp
 This section covers Snowflake's Horizon governance framework across 6 areas: Roles & Access Control -Creating custom roles with granular privileges; Auto Classification — Automatically detecting and tagging PII columns using classification profiles; Column-Level Masking — Tag-based dynamic masking policies that hide sensitive string/date data for non-admin roles; Row-Level Security — Row access policies that filter rows by role; Data Quality (DMFs) — System and custom Data Metric Functions to monitor nulls, duplicates, and business rule violations; Trust Center — Security scanner packages for continuous account risk monitoring
 
 
-## Part 5 – 
+## Part 5 – Apps & Collaboration
 
+This section covers integrating third-party Marketplace data with Tasty Bytes internal data: Snowflake Marketplace — Acquired Weather Source and Safegraph POI datasets via zero-copy data sharing (no ETL needed); Weather Integration — Built views joining weather history with location/order data to correlate sales with temperature, precipitation, and snowfall; Safegraph POI Analysis — Joined geospatial point-of-interest data with weather metrics to find the windiest truck locations and compare "calm day" vs. "windy day" sales by brand; Streamlit in Snowflake — Built an interactive app to visualize daily menu item sales trends in Japan with dynamic filtering and Altair charts
 
 ---
 
 # Notes
 
-This repository is actively updated as I progress through each quickstart module and expand into more advanced Snowflake use cases.
+This project is based on a guided Snowflake Quickstart. The implementation follows the provided framework, sample data, and code structure from Snowflake.
+
+The purpose of this project is not to present original system design, but to demonstrate the practical skills I developed throughout the process.
