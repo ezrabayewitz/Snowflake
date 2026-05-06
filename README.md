@@ -24,7 +24,7 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 ---
 
-## Additional Quickstarts (In Progress)
+## End-to-End Analytics with Snowflake and Power BI (In Progress)
 
 | Project | Description | Status |
 |----------|-------------|------|
@@ -42,7 +42,7 @@ Snowflake/
 │   ├── Part-3/   ← Cortex AI
 │   ├── Part-4/   ← Governance Features in Snowflake Horizon
 │   ├── Part-5/   ← Apps & Collaboration
-├── quickstarts/  ← additional quickstarts (coming soon)
+├── End-to-End Analytics with Snowflake and Power BI/
 ├── queries/      ← standalone SQL exercises
 ├── notes/        ← SnowPro Core study notes
 └── README.md
