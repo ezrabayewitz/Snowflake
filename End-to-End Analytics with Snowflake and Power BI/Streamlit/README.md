@@ -34,6 +34,3 @@ The dashboard queries a star schema of Dynamic Tables in `TB_101.POWERBI`, built
 
 <!-- Add your screen recording or GIF here -->
 
-## Author
-
-Ezra Bayewitz
