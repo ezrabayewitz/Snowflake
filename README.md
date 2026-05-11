@@ -24,11 +24,15 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 
 ---
 
-## End-to-End Analytics with Snowflake and Power BI (In Progress)
+## End-to-End Analytics with Snowflake and Power BI
 
-| Project | Description | Status |
-|----------|-------------|------|
-| Coming soon | Extended SQL practice and applied analytics labs | ⏳ Planned |
+| Part | Focus Area | What I Learned |
+|------|------------|----------------|
+| Part 1 | Data Profiling | Designed the foundational data layer and access control framework to serve Tasty Bytes analytics through Power BI, with region-based role segregation.|
+| Part 2 | Makretplace Data | Acquired and integrated SafeGraph geospatial data from the Snowflake Marketplace to enrich Tasty Bytes truck locations with point-of-interest metadata. |
+| Part 3 | Star Schema with Dynamic Tables | Built a complete star schema data model using Snowflake Dynamic Tables, providing an auto-refreshing analytics layer optimized for Power BI consumption. |
+| Part 4 | Data Governance | Protect sensitive data and enforce access controls using **Snowflake Horizon** — Snowflake's built-in data governance framework. |
+| Streamlit | Tasty Bytes - Regional Sales Dashboard | An interactive Streamlit dashboard analyzing monthly sales performance across global regions for the Tasty Bytes food truck business, built on Snowflake Dynamic Tables. |
 
 ---
 
@@ -43,6 +47,11 @@ Snowflake/
 │   ├── Part-4/   ← Governance Features in Snowflake Horizon
 │   ├── Part-5/   ← Apps & Collaboration
 ├── End-to-End Analytics with Snowflake and Power BI/
+│   ├── Part-1/   ← Data Profiling
+│   ├── Part-2/   ← Makretplace Data
+│   ├── Part-3/   ← Star Schema with Dynamic Tables
+│   ├── Part-4/   ← Data Governance
+│   ├── Streamlit/   ← Tasty Bytes - Regional Sales Dashboard
 ├── queries/      ← standalone SQL exercises
 ├── notes/        ← SnowPro Core study notes
 └── README.md
