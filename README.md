@@ -19,8 +19,8 @@ A structured portfolio of hands-on Snowflake quickstarts, SQL exercises, and dat
 | Part 1 | Setup & Basic Queries | Created, configured, & scaled a Virtual Warehouse; Query Result Cache; Zero-Copy Cloning; Transfored & cleaned data; Recovered dropped table using UNDROP; Created & applied Resource Monitor; Created Budget; Used Universal Search |
 | Part 2 | Simple Data Pipeline | Ingested data from an external S3 stage; Queried and transformed semi-structured VARIANT data; Used the FLATTEN function to parse arrays; Created and chained Dynamic Tables; Learned how an ELT pipeline automatically processes new data; Visualized a pipeline using the Directed Acyclic Graph (DAG) |
 | Part 3 | Cortex AI | Cortex Playground for AI model testing & optimization; Cortex AI Functions for systematic customer feedback processing; Cortex Search for instant customer feedback discovery & operational intelligence; Cortex Analyst for conversational data exploration |
-| Part 4 | Governance Features in Snowflake Horizon | Compute scaling, performance tuning, concurrency |
-| Part 5 | Apps & Collaboration | Time Travel, data recovery, dynamic tables |
+| Part 4 | Governance with Horizon | Implemented a comprehensive data governance framework using Snowflake Horizon to secure PII, enforce access controls, and monitor data quality across the Tasty Bytes platform. |
+| Part 5 | Apps & Collaboration | Leveraged Snowflake Marketplace data shares and Streamlit to enrich Tasty Bytes analytics with third-party weather and geospatial data — uncovering how external factors like wind and precipitation impact food truck sales. |
 
 ---
 
@@ -44,7 +44,7 @@ Snowflake/
 │   ├── Part-1/   ← setup + basics
 │   ├── Part-2/   ← Simple Data Pipeline
 │   ├── Part-3/   ← Cortex AI
-│   ├── Part-4/   ← Governance Features in Snowflake Horizon
+│   ├── Part-4/   ← Governance with Horizon
 │   ├── Part-5/   ← Apps & Collaboration
 ├── End-to-End Analytics with Snowflake and Power BI/
 │   ├── Part-1/   ← Data Profiling
