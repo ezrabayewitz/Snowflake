@@ -1,6 +1,7 @@
 # End-to-End Analytics with Snowflake and Power BI
 
-A structured, hands-on walkthrough of Snowflake's key fundamentals, following the official Zero to Snowflake quickstart series. This project documents my learning process as I build practical skills in cloud data warehousing using Snowflake.
+A structured, hands-on walkthrough, learning how to easily transform raw data into an optimal format for analysis within Power BI.
+
 
 Concepts applied using a sample dataset called Tasty Bytes.
 
@@ -11,19 +12,18 @@ Concepts applied using a sample dataset called Tasty Bytes.
 # Objective
 
 To gain practical experience with core Snowflake concepts including:
-- Data loading and transformation
-- Virtual warehouse management
-- Querying structured and semi-structured data
-- Time Travel and data recovery features
-- Building foundational SQL fluency in a cloud environment
+- How to easily profile data with Snowsight
+- How to enrich your organizational data with third party datasets from the Snowflake Marketplace
+- Understanding the fundamentals and benefits of a star schema design
+- How to build simple ELT pipelines with SQL using Dynamic Tables
+- How to tag and protect your data with Snowflake Horizon's governance features
+- Connecting Power BI to Snowflake to perform near-real time analytics
+
 
 To gain hands-on experience in the following areas:
-- A comprehensive understanding of the core Snowflake platform.
-- Configured Virtual Warehouses.
-- An automated ELT pipeline with Dynamic Tables.
-- A complete intelligence customer analytics platform leveraging Snowflake AI.
-- A robust data governance framework with roles and policies.
-- Enriched analytical views combining first- and third-party data.
+- Data engineering pipelines using declarative SQL with Dynamic Tables
+- A star schema that is protected with Snowflake Horizon features such as masking policies
+- A Power BI DirectQuery semantic model that is designed for performance and near real-time analytics without the hassle of scheduling refreshes
 
 ---
 
@@ -44,7 +44,7 @@ Zero-to-Snowflake/
 ├── Part-4/
 │   ├── README.md
 │   └── queries.sql
-├── Part-5/
+├── Streamlit-5/
 │   ├── README.md
 │   └── queries.sql
 
@@ -55,26 +55,27 @@ Zero-to-Snowflake/
 
 # Learning Progress
 
-## Part 1 – Getting Started with Snowflake
+## Part 1 – Data Profiling
 
-Learned about core Snowflake concepts by exploring Virtual Warehouses, using the query results cache, performing basic data transformations, leveraging data recovery with Time Travel, and monitoring account with Resource Monitors and Budgets
+Learned how to use Snowflake Horizon to protect sensitive data. You auto-classified PII columns and applied custom tags, then created dynamic masking policies that hide or partially obscure names, emails, phone numbers, and dates of birth based on the user's role. Finally, you implemented row access policies so regional analyst roles can only see data for their assigned region. All of this is enforced at the engine level and is transparent to Power BI.
 
-## Part 2 – Data Pipeline
-
-Learned how to build a simple, automated data pipeline in Snowflake. Started by ingesting raw, semi-structured data from an external stage, and then used the power of Snowflake's Dynamic Tables to transform and enrich that data, creating a pipeline that automatically stays up-to-date as new data arrives.
-
-## Part 3 – Cortex AI
-
-Explored Snowflake's complete AI platform through a progressive journey from experimentation into unified business intelligence. Learned AI capabilities by building a comprehensive customer intelligence system using Cortex Playground for AI experimentation, Cortex AI Functions for production-scale analysis, Cortex Search for semantic text searching, and Cortex Analyst for natural language analytics.
-
-## Part 4 – Governance with Horizon
-
-This section covers Snowflake's Horizon governance framework across 6 areas: Roles & Access Control -Creating custom roles with granular privileges; Auto Classification — Automatically detecting and tagging PII columns using classification profiles; Column-Level Masking — Tag-based dynamic masking policies that hide sensitive string/date data for non-admin roles; Row-Level Security — Row access policies that filter rows by role; Data Quality (DMFs) — System and custom Data Metric Functions to monitor nulls, duplicates, and business rule violations; Trust Center — Security scanner packages for continuous account risk monitoring
+## Part 2 – Marketplace Data
 
 
-## Part 5 – Apps & Collaboration
+Learned how to enrich first-party data with third-party datasets from the Snowflake Marketplace. Accessed a SafeGraph listing containing location metadata (coordinates, street addresses, categories), explored it with sample queries, then performed a cross-database join to combine it with existing location data using a shared placekey. Copied the marketplace data into my own schema so it could be consumed by dynamic tables in the next section — all without any data movement or ETL pipelines.
 
-This section covers integrating third-party Marketplace data with Tasty Bytes internal data: Snowflake Marketplace — Acquired Weather Source and Safegraph POI datasets via zero-copy data sharing (no ETL needed); Weather Integration — Built views joining weather history with location/order data to correlate sales with temperature, precipitation, and snowfall; Safegraph POI Analysis — Joined geospatial point-of-interest data with weather metrics to find the windiest truck locations and compare "calm day" vs. "windy day" sales by brand; Streamlit in Snowflake — Built an interactive app to visualize daily menu item sales trends in Japan with dynamic filtering and Altair charts
+## Part 3 – Star Schema with Dynamic Tables
+
+Learned how to model a star schema using Dynamic Tables. Created static date and time dimensions using Snowflake's generator functions, then built dimension tables (truck, franchise, menu item, location, customer) and layered fact tables (order detail → order header → order aggregate) as dynamic tables with DOWNSTREAM and time-based target lags. The dynamic tables form a dependency graph that Snowflake automatically refreshes as upstream data changes — giving a continuously up-to-date star schema without manual ETL orchestration. Used elastic compute by temporarily scaling up a warehouse for the initial load, then scaling it back down when finished.
+
+## Part 4 – Data Governance
+
+Learned how to use Snowflake Horizon to protect sensitive data. Auto-classified PII columns and applied custom tags, then created dynamic masking policies that hide or partially obscure names, emails, phone numbers, and dates of birth based on the user's role. Implemented row access policies so regional analyst roles can only see data for their assigned region. All of this is enforced at the engine level and is transparent to Power BI.
+
+
+## Streamlit – Tasty Bytes - Regional Sales Dashboard
+
+This Streamlit dashboard is a Regional Sales Comparison tool for Tasty Bytes that visualizes monthly sales performance across regions (North America, EMEA, APAC). It connects to the star schema dynamic tables built in earlier sections and provides four views: a monthly revenue trend line chart, a stacked bar chart showing revenue composition by region, side-by-side line charts for total orders and average order value, and a summary table with revenue, orders, AOV, and unique customers per region. A sidebar year filter lets users drill into a specific year or view all time. It demonstrates how Snowflake's governance (row access policies from Section 4) flows through to the app — each user only sees the regions their role permits.
 
 ---
 
