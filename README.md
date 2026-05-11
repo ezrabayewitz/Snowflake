@@ -44,7 +44,7 @@ Zero-to-Snowflake/
 ├── Part-4/
 │   ├── README.md
 │   └── queries.sql
-├── Streamlit-5/
+├── Streamlit/
 │   ├── README.md
 │   └── queries.sql
 
