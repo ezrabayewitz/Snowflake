@@ -30,7 +30,7 @@ To gain hands-on experience in the following areas:
 # Project Structure
 
 ```
-Zero-to-Snowflake/
+End-to-End Analytics with Snowflake and Power BI/
 ├── README.md
 ├── Part-1/
 │   ├── README.md
