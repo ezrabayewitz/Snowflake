@@ -52,7 +52,7 @@ Snowflake/
 │   ├── Part-3/   ← Star Schema with Dynamic Tables
 │   ├── Part-4/   ← Data Governance
 │   ├── Streamlit/   ← Tasty Bytes - Regional Sales Dashboard
-├── Retail-Sales-Pipeline/
+├── Personal Project - Retail Sales Pipeline/
 │   ├── Part 1 - Setup.sql                  # Database, schema, and warehouse setup
 │   ├── Part 2 - Staging.sql                # Internal stage and file format creation
 │   ├── Part 3 - Loading Raw Data.sql       # Table definitions and COPY INTO commands
