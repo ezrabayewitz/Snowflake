@@ -100,18 +100,6 @@ The four reporting views answer real questions a business stakeholder would ask:
 
 ---
 
-## How to Run
-
-1. Create a Snowflake trial account at [snowflake.com](https://snowflake.com)
-2. Download the Olist dataset from Kaggle and unzip
-3. Run each numbered script in order inside Snowsight worksheets
-4. For step 4, use a **Python worksheet** in Snowsight
-5. All other steps use standard **SQL worksheets**
-
-> **Note**: Never commit credentials to version control. If running Snowpark outside of Snowsight, store credentials in environment variables and use `Session.builder.configs()` to connect.
-
----
-
 ## Row Counts (after full pipeline run)
 
 | Table | Rows |
