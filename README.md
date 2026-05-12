@@ -58,13 +58,13 @@ Snowflake/
 │   ├── Part 3 - Loading Raw Data.sql       # Table definitions and COPY INTO commands
 │   ├── Part 4 - Snowpark Transformations.py    # Snowpark Python transformation logic
 │   ├── Part 5 - Reporting Views.sql        # Business-facing SQL views
-│
-└── docs/
-    ├── 01_setup_README.md
-    ├── 02_staging_README.md
-    ├── 03_load_raw_README.md
-    ├── 04_snowpark_transforms_README.md
-    └── 05_reporting_views_README.md
+│   │
+│   └── docs/
+│       ├── 01_setup_README.md
+│       ├── 02_staging_README.md
+│       ├── 03_load_raw_README.md
+│       ├── 04_snowpark_transforms_README.md
+│       └── 05_reporting_views_README.md
 ├── notes/        ← SnowPro Core study notes
 └── README.md
 ```
