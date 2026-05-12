@@ -66,11 +66,11 @@ retail-sales-pipeline/
 ├── Part 5 - Reporting Views.sql        # Business-facing SQL views
 │
 └── docs/
-    ├── 01_setup_README.md
-    ├── 02_staging_README.md
-    ├── 03_load_raw_README.md
-    ├── 04_snowpark_transforms_README.md
-    └── 05_reporting_views_README.md
+    ├── 01_Setup_README.md
+    ├── 02_Staging_README.md
+    ├── 03_Loading_Raw_Data_README.md
+    ├── 04_Snowpark_Transformation_README.md
+    └── 05_Reporting_Views_README.md
 ```
 
 ---
