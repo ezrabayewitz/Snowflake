@@ -1,4 +1,4 @@
-# 02 — Staging and Snowpipe
+# 03 — Staging and Snowpipe
 
 This script creates two named file formats, an internal stage, and four Snowpipe definitions that form the automated ingestion layer of the pipeline.
 
