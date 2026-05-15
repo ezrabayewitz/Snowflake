@@ -53,6 +53,14 @@ CREATE OR REPLACE PIPE countries_pipe
   FILE_FORMAT = (FORMAT_NAME = world_bank_metadata_csv)
   ON_ERROR = 'CONTINUE';
 
+CREATE OR REPLACE PIPE urban_pipe
+  AUTO_INGEST = FALSE
+  AS
+  COPY INTO RAW.INDICATORS_RAW
+  FROM @world_stage/API_SP.URB.TOTL.IN.ZS_DS2_en_csv_v2_121583.csv
+  FILE_FORMAT = (FORMAT_NAME = world_bank_csv)
+  ON_ERROR = 'CONTINUE';
+
 LIST @world_stage;
 
 ALTER PIPE pop_pipe REFRESH;
