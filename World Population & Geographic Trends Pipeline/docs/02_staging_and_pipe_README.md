@@ -51,13 +51,3 @@ Some World Bank CSVs include leading/trailing whitespace in string fields. This 
 | Best for | Large batch loads | Continuous / streaming files |
 
 ---
-
-## What to Verify
-
-After running this script and uploading files, confirm:
-
-```sql
-LIST @world_stage;
-```
-
-You should see all uploaded files listed under their respective subdirectory paths (`population/`, `indicators/`, `countries/`).
