@@ -36,19 +36,21 @@ World Bank CSVs (free public data)
 ┌──────────────────────────────────────┐
 │          ANALYTICS SCHEMA            │
 │  Dynamic Tables (auto-refreshing)    │
-│  dim_countries                       │
-│  fct_population                      │
-│  fct_indicators                      │
+│  COUNTRY_PROFILES                    │
+│  GDP_POPULATION_EFFICIENCY           │
+│  REGIONAL_TRENDS                     │
+│  URBANIZATION_GROWTH                 │
 └──────────────────────────────────────┘
           │
           │  SQL views
           ▼
 ┌──────────────────────────────────────┐
 │          REPORTING SCHEMA            │
-│  vw_gdp_vs_population                │
-│  vw_urbanization_trends              │
-│  vw_regional_comparisons             │
-│  vw_economic_outliers                │
+│  V_COUNTRY_SNAPSHOT_2023             │
+│  V_GDP_LEADERS_2023                  │
+│  V_REGIONAL_POPULATION_TRENDS        │
+│  V_TOP_URBANIZING_COUNTRIES          │
+│  V_URBANIZATION_VS_GDP               │
 └──────────────────────────────────────┘
 ```
 
