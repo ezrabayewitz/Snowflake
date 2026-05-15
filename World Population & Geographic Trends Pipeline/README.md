@@ -1,14 +1,18 @@
 # World Population & Geographic Trends Pipeline
 
-An end-to-end Snowflake data engineering pipeline built on World Bank and UN public datasets. This project demonstrates automated ingestion, change data capture, and declarative transformation — three production-grade patterns used in real-world consulting engagements.
+An end-to-end Snowflake data engineering pipeline built on World Bank public datasets. This project demonstrates automated ingestion via Snowpipe, change data capture using Streams, scheduled transformation using Tasks and Stored Procedures, declarative analytics using Dynamic Tables, and business-facing reporting views.
 
 ---
 
 ## Project Overview
 
-This pipeline automatically ingests global population and economic indicator data into Snowflake, detects changes using Streams, triggers transformations on a schedule using Tasks, and maintains a self-updating analytics layer using Dynamic Tables. Once deployed, the pipeline runs itself with no manual intervention.
+This pipeline ingests global population, GDP per capita, and urbanization data from the World Bank into Snowflake, transforms it from a wide format into a long analytical format, and maintains a self-updating analytics layer that answers real geographic and economic business questions.
 
-**Datasets**: World Bank Open Data (population, GDP per capita, urbanization) — free, no account required
+**Datasets**: World Bank Open Data — free, no account required
+- `SP.POP.TOTL` — Total population by country (1960–2025)
+- `NY.GDP.PCAP.CD` — GDP per capita in USD (1960–2025)
+- `SP.URB.TOTL.IN.ZS` — Urban population as % of total (1960–2025)
+- Country metadata — region and income group classifications
 
 **Platform**: Snowflake (X-Small warehouse, free trial)
 
@@ -19,51 +23,73 @@ This pipeline automatically ingests global population and economic indicator dat
 ## Architecture
 
 ```
-World Bank CSVs (free public data)
-          │
-          │  Snowpipe (event-driven auto-ingestion)
-          ▼
-┌──────────────────────────────────────┐
-│             RAW SCHEMA               │
-│  countries_raw                       │
-│  population_raw                      │
-│  indicators_raw                      │
-└──────────────────────────────────────┘
-          │
-          │  Streams (change data capture)
-          │  Tasks (scheduled transformation trigger)
-          ▼
-┌──────────────────────────────────────┐
-│          ANALYTICS SCHEMA            │
-│  Dynamic Tables (auto-refreshing)    │
-│  COUNTRY_PROFILES                    │
-│  GDP_POPULATION_EFFICIENCY           │
-│  REGIONAL_TRENDS                     │
-│  URBANIZATION_GROWTH                 │
-└──────────────────────────────────────┘
-          │
-          │  SQL views
-          ▼
-┌──────────────────────────────────────┐
-│          REPORTING SCHEMA            │
-│  V_COUNTRY_SNAPSHOT_2023             │
-│  V_GDP_LEADERS_2023                  │
-│  V_REGIONAL_POPULATION_TRENDS        │
-│  V_TOP_URBANIZING_COUNTRIES          │
-│  V_URBANIZATION_VS_GDP               │
-└──────────────────────────────────────┘
+World Bank CSVs (4 files, free public data)
+              │
+              │  Snowpipe (AUTO_INGEST = FALSE, manual REFRESH)
+              ▼
+┌──────────────────────────────────────────┐
+│               RAW SCHEMA                 │
+│  population_raw   (wide: 1 row/country)  │
+│  indicators_raw   (wide: 1 row/country)  │
+│  countries_raw    (metadata)             │
+└──────────────────────────────────────────┘
+              │
+              │  Streams (APPEND_ONLY change data capture)
+              │  Task (every 5 min, conditional on stream data)
+              │  Stored Procedure (UNPIVOT wide → long format)
+              ▼
+┌──────────────────────────────────────────┐
+│            ANALYTICS SCHEMA              │
+│  country_year_metrics                    │
+│  (long: 1 row per country/year/indicator)│
+│                                          │
+│  Dynamic Tables (TARGET_LAG = 5 min)     │
+│  country_profiles                        │
+│  urbanization_growth                     │
+│  gdp_population_efficiency               │
+│  regional_trends                         │
+└──────────────────────────────────────────┘
+              │
+              │  SQL views
+              ▼
+┌──────────────────────────────────────────┐
+│            REPORTING SCHEMA              │
+│  v_top_urbanizing_countries              │
+│  v_gdp_leaders_2023                      │
+│  v_regional_population_trends            │
+│  v_country_snapshot_2023                 │
+│  v_urbanization_vs_gdp                   │
+└──────────────────────────────────────────┘
 ```
 
 ---
 
-## How This Differs from a Basic Pipeline
+## Key Concepts Demonstrated
 
-| Feature | Basic pipeline | This project |
-|---|---|---|
-| Ingestion | Manual COPY INTO | Snowpipe (automatic) |
-| Transformation trigger | Manual execution | Streams + Tasks (scheduled) |
-| Analytics layer | Static tables | Dynamic Tables (self-updating) |
-| Change detection | None | Streams (row-level CDC) |
+| Concept | Where Used |
+|---|---|
+| Snowpipe (automated ingestion) | Step 2 |
+| Named file formats (two formats for different CSV structures) | Step 2 |
+| APPEND_ONLY streams (change data capture) | Step 4 |
+| Stored procedure (encapsulated transformation logic) | Step 4 |
+| Conditional task scheduling (`SYSTEM$STREAM_HAS_DATA`) | Step 4 |
+| UNPIVOT (wide-to-long format transformation) | Step 4 |
+| Dynamic Tables with dependency chaining | Step 5 |
+| Conditional aggregation pivot (`MAX CASE WHEN`) | Step 5 |
+| Cost-conscious warehouse configuration | Step 1 |
+| Defensive ingestion patterns (`_extra`, `IF NOT EXISTS`, `NULLIF`) | Steps 2–5 |
+
+---
+
+## Business Questions Answered
+
+| View | Question |
+|---|---|
+| `v_top_urbanizing_countries` | Which countries urbanized fastest between 2000 and 2023? |
+| `v_gdp_leaders_2023` | Which countries had the highest GDP per capita in 2023? |
+| `v_regional_population_trends` | How have World Bank regions evolved in population, GDP, and urbanization since 1990? |
+| `v_country_snapshot_2023` | What does each country look like today across all key metrics? |
+| `v_urbanization_vs_gdp` | Does higher urbanization correlate with higher GDP per capita? |
 
 ---
 
@@ -72,12 +98,12 @@ World Bank CSVs (free public data)
 ```
 world-population-pipeline/
 │
-├── 01_setup.sql                    # Database, schemas, warehouse
-├── 02_staging_and_pipe.sql         # Stage, file format, Snowpipe definition
-├── 03_raw_tables.sql               # Raw table definitions
-├── 04_streams_and_tasks.sql        # CDC streams + scheduled task logic
-├── 05_dynamic_tables.sql           # Self-updating analytics layer
-├── 06_reporting_views.sql          # Business-facing SQL views
+├── 01_setup.sql
+├── 02_staging_and_pipe.sql
+├── 03_raw_tables.sql
+├── 04_streams_and_tasks.sql
+├── 05_dynamic_tables.sql
+├── 06_reporting_views.sql
 │
 └── docs/
     ├── 01_setup_README.md
@@ -90,50 +116,18 @@ world-population-pipeline/
 
 ---
 
-## Key Concepts Demonstrated
-
-| Concept | Where Used |
-|---|---|
-| Snowpipe (continuous ingestion) | Step 2 |
-| Internal stages + named file formats | Step 2 |
-| Streams (change data capture) | Step 4 |
-| Tasks (scheduled pipeline automation) | Step 4 |
-| Dynamic Tables (declarative transforms) | Step 5 |
-| Fact and dimension modeling | Steps 4–5 |
-| Window functions and aggregations | Step 6 |
-| Cost-conscious warehouse configuration | Step 1 |
-
----
-
-## Business Questions Answered
-
-| View | Question answered |
-|---|---|
-| `vw_gdp_vs_population` | Which countries punch above their weight economically relative to population size? |
-| `vw_urbanization_trends` | Which regions are urbanizing fastest, and how has that shifted over time? |
-| `vw_regional_comparisons` | How do continents compare on population growth and economic development? |
-| `vw_economic_outliers` | Which countries are statistical outliers in GDP per capita for their region? |
-
----
-
-## Data Sources
-
-All datasets are freely available from the World Bank Open Data portal (data.worldbank.org):
-
-- `SP.POP.TOTL` — Total population by country and year
-- `NY.GDP.PCAP.CD` — GDP per capita (current USD)
-- `SP.URB.TOTL.IN.ZS` — Urban population as % of total
-
----
-
 ## How to Run
 
 1. Create a Snowflake trial account at [snowflake.com](https://snowflake.com)
-2. Download the three World Bank datasets as CSV files
-3. Run each numbered SQL script in order inside Snowsight
-4. Upload CSV files to the internal stage when prompted in Step 2
-5. Verify Snowpipe loaded the raw tables, then confirm Dynamic Tables are refreshing
+2. Download the four World Bank CSVs (links in each dataset README)
+3. Run scripts `01` through `06` in order in Snowsight SQL worksheets
+4. Upload CSVs to the internal stage when prompted in Step 2
+5. Run `ALTER PIPE ... REFRESH` for all four pipes
+6. Run the initial backfill INSERT statements in Step 4
+7. Confirm Dynamic Tables and reporting views return data via the verification queries
 
-> **Security note**: Never commit credentials to version control. If running outside Snowsight, store credentials in environment variables.
+> **Note**: Tasks are created in a suspended state and must be resumed with `ALTER TASK ... RESUME`. This is done automatically at the end of Step 4.
+
+> **Security**: Never commit credentials to version control.
 
 ---
