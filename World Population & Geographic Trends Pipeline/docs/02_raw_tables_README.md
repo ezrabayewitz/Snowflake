@@ -57,21 +57,3 @@ An `_extra` VARCHAR column is included in all three tables as a catch-all for an
 Year columns are typed as FLOAT rather than INTEGER to handle decimal values in indicator data (e.g. urbanization rates like `67.3`) and to gracefully accommodate nulls, which are common in historical data for smaller or newer countries.
 
 ---
-
-## What to Verify
-
-After triggering the Snowpipes, confirm row counts:
-
-```sql
-SELECT 'countries'  AS tbl, COUNT(*) AS rows FROM countries_raw  UNION ALL
-SELECT 'population' AS tbl, COUNT(*) AS rows FROM population_raw UNION ALL
-SELECT 'indicators' AS tbl, COUNT(*) AS rows FROM indicators_raw;
-```
-
-Expected approximate counts:
-
-| Table | Expected rows |
-|---|---|
-| countries_raw | ~265 |
-| population_raw | ~265 |
-| indicators_raw | ~530 (two indicators × ~265 countries) |
