@@ -349,12 +349,11 @@ Snowflake/
 │   └── docs/
 │
 ├── retail-sales-pipeline/              ← 🏪 ELT pipeline with Snowpark Python
-│   ├── Part 1 - Setup.sql
-│   ├── Part 2 - Staging.sql
-│   ├── Part 3 - Loading Raw Data.sql
-│   ├── Part 4 - Snowpark Transformations.py
-│   ├── Part 5 - Reporting Views.sql
-│   └── docs/
+│   ├── 01-environment-setup.sql
+│   ├── 02-data-ingestion-setup.sql
+│   ├── 03-raw-data-loading.sql
+│   ├── 04-data-transformation-snowpark.py
+│   ├── 05-sales-reporting-views.sql
 │
 ├── snowflake-powerbi-analytics/        ← 📊 Star schema · Power BI · Streamlit · Horizon
 │   ├── Part-1/   ← Data Profiling + RBAC
