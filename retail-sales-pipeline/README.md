@@ -59,11 +59,11 @@ CSV Files (Kaggle)
 ```
 retail-sales-pipeline/
 │
-├── Part 1 - Setup.sql                  # Database, schema, and warehouse setup
-├── Part 2 - Staging.sql                # Internal stage and file format creation
-├── Part 3 - Loading Raw Data.sql       # Table definitions and COPY INTO commands
-├── Part 4 - Snowpark Transformations.py    # Snowpark Python transformation logic
-├── Part 5 - Reporting Views.sql        # Business-facing SQL views
+├── 01-environment-setup.sql                  # Database, schema, and warehouse setup
+├── 02-data-ingestion-setup.sql                # Internal stage and file format creation
+├── 03-raw-data-loading.sql       # Table definitions and COPY INTO commands
+├── 04-data-transformation-snowpark.py    # Snowpark Python transformation logic
+├── 05-sales-reporting-views.sql        # Business-facing SQL views
 │
 └── docs/
     ├── 01_Setup_README.md
