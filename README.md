@@ -12,9 +12,25 @@
 
 ## 📌 Overview
 
-This repository documents a structured, end-to-end journey through **Snowflake's core data engineering capabilities** — from cloud warehouse fundamentals to production-grade analytics pipelines. Projects span data ingestion, transformation, governance, AI, and business intelligence — including a self-built **World Population & Geographic Trends Pipeline** using real World Bank data, a **Retail Sales Pipeline**, and an **interactive Power BI + Streamlit analytics layer**.
+A portfolio of **cloud data engineering projects** built entirely in Snowflake — spanning pipeline automation, dimensional modeling, change data capture, data governance, and business intelligence. Projects progress from guided Snowflake quickstarts to fully independent, production-style pipelines built on real-world public datasets.
 
-> **Business focus:** Every project here maps to real-world data engineering tasks — building scalable pipelines, enforcing governance, enabling self-service analytics, and extracting insights from raw data.
+Flagship work includes a **World Population & Geographic Trends Pipeline** ingesting 60+ years of World Bank data across 4 datasets, a **Retail Sales Pipeline** with Snowpark Python transformations, and a complete **analytics stack** delivering insights through Power BI and Streamlit.
+
+> **Engineering focus:** Every project reflects real data engineering workflows — automated ingestion, ELT orchestration, dimensional modeling, role-based access control, and self-service analytics delivery.
+
+---
+
+## 🖼️ Featured Outputs
+
+> 📸 *Screenshots coming soon — architecture diagrams, Snowflake DAG views, Power BI dashboards, and Streamlit app*
+
+<!-- SCREENSHOT PLACEHOLDER: Add 3-4 images here once captured
+Suggested layout:
+![Pipeline DAG](./world-population-pipeline/docs/img/dag_screenshot.png)
+![Power BI Dashboard](./snowflake-powerbi-analytics/docs/img/powerbi_dashboard.png)
+![Streamlit Dashboard](./snowflake-powerbi-analytics/Streamlit/docs/img/streamlit_dashboard.png)
+![Query Results](./world-population-pipeline/docs/img/reporting_view_results.png)
+-->
 
 ---
 
@@ -22,12 +38,12 @@ This repository documents a structured, end-to-end journey through **Snowflake's
 
 - [Tech Stack](#-tech-stack)
 - [Key Skills Demonstrated](#-key-skills-demonstrated)
-- [Project Architecture](#-project-architecture)
+- [Portfolio Architecture Overview](#-portfolio-architecture-overview)
 - [Projects](#-projects)
-  - [World Population & Geographic Trends Pipeline](#1--world-population--geographic-trends-pipeline--flagship-project)
-  - [Retail Sales Pipeline](#2--retail-sales-pipeline)
-  - [End-to-End Analytics with Snowflake & Power BI](#3--end-to-end-analytics-with-snowflake--power-bi)
-  - [Zero to Snowflake (Core Quickstart Series)](#4--zero-to-snowflake-core-quickstart-series)
+  - [1. World Population & Geographic Trends Pipeline](#1--world-population--geographic-trends-pipeline--flagship-project)
+  - [2. Retail Sales Pipeline](#2--retail-sales-pipeline)
+  - [3. End-to-End Analytics with Snowflake & Power BI](#3--end-to-end-analytics-with-snowflake--power-bi)
+  - [4. Zero to Snowflake (Core Quickstart Series)](#4--zero-to-snowflake-core-quickstart-series)
 - [Repository Structure](#-repository-structure)
 - [Certification](#-certification)
 - [Connect](#-connect)
@@ -38,67 +54,75 @@ This repository documents a structured, end-to-end journey through **Snowflake's
 
 | Category | Tools |
 |---|---|
-| **Cloud Data Platform** | Snowflake (Virtual Warehouses, Stages, Dynamic Tables, Cortex AI, Horizon) |
+| **Cloud Data Warehouse** | Snowflake (Virtual Warehouses, Internal & External Stages, Dynamic Tables, Cortex AI, Horizon) |
 | **Languages** | SQL, Python (Snowpark) |
-| **Data Transformation** | Snowpark Python, Dynamic Tables, SQL Views |
-| **Business Intelligence** | Power BI, Streamlit |
-| **Data Governance** | Snowflake Horizon (RBAC, PII masking, data quality) |
+| **Pipeline Automation** | Snowpipe, Streams (CDC), Tasks, Stored Procedures |
+| **Data Transformation** | Snowpark Python, UNPIVOT, Dynamic Tables, SQL Views |
+| **Dimensional Modeling** | Star Schema (Fact + Dimension tables), Bronze/Silver/Gold layering |
+| **Business Intelligence** | Power BI, Streamlit in Snowflake |
+| **Data Governance** | Snowflake Horizon (RBAC, dynamic data masking, PII classification, data quality) |
 | **AI / ML** | Snowflake Cortex (LLM functions, Cortex Search, Cortex Analyst) |
-| **Data Sources** | Internal staging, AWS S3, Snowflake Marketplace (SafeGraph) |
-| **Architecture Patterns** | ELT, Star Schema, DAG Pipelines, Role-Based Access Control, Change Data Capture (CDC), Wide-to-Long UNPIVOT |
+| **Data Sources** | Internal staging, AWS S3, Snowflake Marketplace (SafeGraph geospatial), World Bank Open Data |
+| **Architecture Patterns** | ELT, Change Data Capture (CDC), DAG orchestration, pipeline automation, analytics engineering |
 
 ---
 
 ## 💡 Key Skills Demonstrated
 
-- **Pipeline Engineering** — Built end-to-end ELT pipelines from raw ingestion through staging, transformation, and business-facing reporting views
-- **Automated Ingestion** — Implemented Snowpipe for continuous data loading and APPEND_ONLY Streams for change data capture
-- **Scheduled Orchestration** — Designed conditional Task scheduling using `SYSTEM$STREAM_HAS_DATA` to trigger transformations only when new data arrives
-- **Data Modeling** — Designed star schema data models and long-format analytical tables with automated refresh via Dynamic Tables
-- **Cloud Infrastructure** — Configured and scaled Virtual Warehouses; implemented Resource Monitors and Budgets
-- **Data Governance** — Applied role-based access control, PII masking policies, and data quality monitoring using Snowflake Horizon
-- **Semi-Structured Data** — Parsed and flattened JSON/VARIANT data using `FLATTEN` and lateral joins
-- **AI Integration** — Used Snowflake Cortex AI for LLM-powered feedback analysis and conversational analytics
-- **Third-Party Data Enrichment** — Integrated Snowflake Marketplace datasets (SafeGraph geospatial) to enrich internal analytics
-- **BI & Visualization** — Delivered insights via Power BI connected to Snowflake and an interactive Streamlit dashboard
-- **Python in Snowflake** — Wrote Snowpark transformations executed natively within the Snowflake environment
+- **Pipeline Automation** — Built automated ELT pipelines using Snowpipe for continuous ingestion, Streams for change data capture, and conditional Tasks for orchestration — transformations trigger only when new data arrives
+- **Data Warehousing** — Designed and provisioned full Snowflake environments including warehouse sizing, schema layering (Bronze/Silver/Gold), and cost-conscious configuration
+- **Analytics Engineering** — Modeled data into star schemas and long-format analytical tables; delivered self-refreshing analytics layers via Dynamic Table dependency chains with 5-minute lag
+- **Dimensional Modeling** — Built fact and dimension table structures optimized for downstream BI consumption in Power BI
+- **Data Transformation** — Applied UNPIVOT logic to reshape wide-format public datasets (60+ year columns per country) into long analytical formats using Stored Procedures
+- **Data Governance** — Enforced role-based access control, dynamic PII masking, and data quality monitoring using Snowflake Horizon across multi-region analytics environments
+- **Semi-Structured Data** — Parsed and flattened nested JSON/VARIANT data using `FLATTEN` and lateral joins
+- **AI Integration** — Applied Snowflake Cortex AI functions for LLM-powered feedback processing and conversational analytics (Cortex Analyst)
+- **Third-Party Enrichment** — Acquired and integrated SafeGraph geospatial data from Snowflake Marketplace to enrich internal datasets
+- **BI & Visualization** — Connected Snowflake to Power BI for regional KPI reporting and built an interactive Streamlit dashboard deployed natively in Snowflake
+- **Python in Snowflake** — Wrote Snowpark transformation logic executed natively within the Snowflake execution environment
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ Portfolio Architecture Overview
+
+> 📐 *Architecture diagram coming soon — see reference below*
 
 ```
 Raw Data Sources
-(CSV files, S3, Marketplace)
-          │
-          ▼
-┌─────────────────────┐
-│   Snowflake Stages  │  ← Internal & External Stages, File Formats
-│   (Ingestion Layer) │
-└─────────┬───────────┘
-          │  COPY INTO
-          ▼
-┌─────────────────────┐
-│    Raw / Bronze     │  ← Unprocessed source tables
-│       Tables        │
-└─────────┬───────────┘
-          │  Snowpark Python + SQL
-          ▼
-┌─────────────────────┐
-│   Silver / Curated  │  ← Cleaned, typed, transformed data
-│       Tables        │     Dynamic Tables (auto-refresh)
-└─────────┬───────────┘
-          │  Star Schema modeling
-          ▼
-┌─────────────────────┐
-│  Gold / Analytics   │  ← Fact + Dimension tables, Reporting Views
-│       Layer         │     Role-Based Access Control (Horizon)
-└─────────┬───────────┘
-          │
-    ┌─────┴──────┐
-    ▼            ▼
- Power BI     Streamlit
-(Dashboards) (Web App)
+(World Bank CSVs · Retail CSVs · S3 · Snowflake Marketplace)
+                    │
+                    ▼
+    ┌─────────────────────────────┐
+    │      Ingestion Layer        │
+    │  Snowpipe · COPY INTO       │
+    │  Internal & External Stages │
+    │  Named File Formats         │
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Bronze / Raw          │  ← Unprocessed source tables
+    │  Streams (CDC) monitoring   │    Wide-format public datasets
+    └──────────────┬──────────────┘
+                   │  Tasks + Stored Procedures
+                   │  (conditional: SYSTEM$STREAM_HAS_DATA)
+                   ▼
+    ┌─────────────────────────────┐
+    │      Silver / Analytics     │  ← UNPIVOT · clean typed data
+    │  Dynamic Tables (5-min lag) │    country_year_metrics
+    │  Dependency-chained DAG     │    Star Schema (Fact + Dims)
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Gold / Reporting      │  ← SQL Views · Horizon RBAC
+    │  Business-facing views      │    PII masking · access policies
+    └──────────┬──────────────────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+    Power BI        Streamlit
+  (Dashboards)    (Interactive App)
 ```
 
 ---
@@ -109,80 +133,101 @@ Raw Data Sources
 
 ### 1. 🌍 World Population & Geographic Trends Pipeline — *Flagship Project*
 
-**[View Project →](<./World Population & Geographic Trends Pipeline/>)**
+**[View Project →](./world-population-pipeline/)**
 
-**Business Problem:** Global organizations and analysts need to understand long-term demographic and economic trends across countries — but World Bank data arrives as wide, country-per-row CSVs spanning 60+ years. This project builds a fully automated pipeline that ingests, reshapes, and continuously refreshes that data into a queryable analytics layer, answering real geographic and economic questions.
+**Business Problem:** Global demographic and economic data exists in abundance — but raw World Bank exports arrive as wide, country-per-row CSVs spanning 60+ years, unusable for analytics without significant reshaping. This project builds a fully automated, self-updating pipeline that ingests 4 public datasets, applies change data capture, conditionally orchestrates transformations, and delivers a continuously refreshed analytics layer answering real geographic and economic questions.
+
+**Scale:** 4 datasets · 195+ countries · 60+ years of data (1960–2025) · 5 reporting views · automated 5-minute refresh cycle · estimated cost under $20 on a free trial account
 
 **What I Built:**
-- Ingested 4 World Bank public datasets (population, GDP per capita, urbanization, country metadata) via **Snowpipe**
-- Implemented **APPEND_ONLY Streams** for change data capture on raw tables
-- Designed a **Stored Procedure** to UNPIVOT wide-format data into a long analytical format (1 row per country/year/indicator)
-- Scheduled **conditional Task execution** using `SYSTEM$STREAM_HAS_DATA` — transforms only fire when new data arrives
-- Built a **Dynamic Table dependency chain** (5-minute lag) for country profiles, urbanization growth, GDP efficiency, and regional trends
-- Delivered 5 business-facing **reporting views** answering real geographic and economic questions
+- Ingested 4 World Bank datasets via **Snowpipe** (total population, GDP per capita, urbanization rate, country metadata)
+- Implemented **APPEND_ONLY Streams** to capture raw table changes without full rescans
+- Designed a **Stored Procedure** encapsulating UNPIVOT logic — reshapes wide format (1 row/country, 60+ year columns) into long analytical format (1 row per country/year/indicator)
+- Scheduled **conditional Task execution** via `SYSTEM$STREAM_HAS_DATA` — cost-efficient orchestration that fires only when new data is detected
+- Built a **4-table Dynamic Table dependency chain** refreshing every 5 minutes: `country_profiles` → `urbanization_growth` → `gdp_population_efficiency` → `regional_trends`
+- Delivered **5 business-facing reporting views** covering urbanization velocity, GDP leadership, regional trend analysis, country snapshots, and urbanization-GDP correlation
+
+> 📸 *Screenshot placeholder — add query output from `v_top_urbanizing_countries` and `v_gdp_leaders_2023` here*
 
 **Pipeline Architecture:**
 
 ```
-World Bank CSVs (4 files — free public data)
+World Bank CSVs (4 files · free public data · no account required)
               │
-              │  Snowpipe (AUTO_INGEST, manual REFRESH)
+              │  Snowpipe (manual REFRESH)
               ▼
         RAW SCHEMA
   population_raw / indicators_raw / countries_raw
-  (wide format: 1 row per country, 60+ year columns)
+  (wide: 1 row per country · 60+ year columns)
               │
-              │  Streams (CDC) → Task (conditional, every 5 min)
-              │  Stored Procedure (UNPIVOT wide → long)
+              │  APPEND_ONLY Streams (CDC)
+              │  Task: every 5 min · fires only if stream has data
+              │  Stored Procedure: UNPIVOT wide → long
               ▼
         ANALYTICS SCHEMA
-  country_year_metrics (long: 1 row per country/year/indicator)
-  Dynamic Tables: country_profiles, urbanization_growth,
-                  gdp_population_efficiency, regional_trends
+  country_year_metrics  (long: 1 row per country/year/indicator)
+  Dynamic Tables (5-min lag · dependency-chained):
+    country_profiles → urbanization_growth
+    → gdp_population_efficiency → regional_trends
               │
               │  SQL Views
               ▼
         REPORTING SCHEMA
-  v_top_urbanizing_countries  |  v_gdp_leaders_2023
-  v_regional_population_trends  |  v_country_snapshot_2023
-  v_urbanization_vs_gdp
+  5 business-facing views (see table below)
 ```
 
-**Business Questions Answered:**
+**Key Analytical Findings:**
 
-| Reporting View | Question Answered |
-|---|---|
-| `v_top_urbanizing_countries` | Which countries urbanized fastest between 2000–2023? |
-| `v_gdp_leaders_2023` | Which countries had the highest GDP per capita in 2023? |
-| `v_regional_population_trends` | How have World Bank regions evolved since 1990? |
-| `v_country_snapshot_2023` | What does each country look like across all metrics today? |
-| `v_urbanization_vs_gdp` | Does higher urbanization correlate with higher GDP per capita? |
+| Reporting View | Business Question | Insight |
+|---|---|---|
+| `v_top_urbanizing_countries` | Which countries urbanized fastest 2000–2023? | Rapid urbanization concentrated in Sub-Saharan Africa and South/Southeast Asia; mature economies showed near-flat urbanization curves over the same period |
+| `v_gdp_leaders_2023` | Highest GDP per capita in 2023? | Small high-income nations (Luxembourg, Switzerland, Norway) led global rankings; resource-dependent Gulf economies ranked highly despite mid-range urbanization — an outlier to the general trend |
+| `v_regional_population_trends` | How have World Bank regions evolved since 1990? | East Asia & Pacific drove the largest absolute population growth; high-income regions saw growth rates slow significantly post-2000 |
+| `v_country_snapshot_2023` | Full metric view per country today? | Exposes wide variance in the urbanization-GDP relationship across income groups — useful baseline for clustering or further ML modeling |
+| `v_urbanization_vs_gdp` | Does urbanization correlate with GDP? | General positive correlation holds across most regions; resource-dependent economies (Gulf states, parts of Sub-Saharan Africa) are consistent outliers — high GDP with mid-range urbanization |
 
-**Tech Used:** Snowpipe, Streams (CDC), Tasks, Stored Procedures, UNPIVOT, Dynamic Tables, SQL Views, Snowflake SQL
+**Tech Used:** Snowpipe · Streams (CDC) · Tasks · Stored Procedures · UNPIVOT · Dynamic Tables · SQL Views · Snowflake SQL · cost-conscious warehouse configuration
+
+**How to Run:**
+
+> **Prerequisites:** Snowflake trial account (free) · 4 World Bank CSV downloads (links in each step README) · ~$20 in Snowflake credits
+
+1. Create a Snowflake trial account at [snowflake.com](https://snowflake.com)
+2. Download the four World Bank CSVs — download links provided in `docs/` READMEs for each step
+3. Run scripts `01` through `06` in order using Snowsight SQL worksheets
+4. When prompted in Step 2, upload the CSVs to the internal stage
+5. Execute `ALTER PIPE ... REFRESH` for all four Snowpipes to trigger initial load
+6. Run the backfill `INSERT` statements in Step 4 to seed the analytics layer
+7. Verify output using the confirmation queries at the bottom of each script
+
+> **Note:** Tasks are created in a suspended state. Step 4 resumes them automatically. To manually resume: `ALTER TASK <task_name> RESUME;`
+> **Security:** Never commit Snowflake credentials to version control.
 
 | File | Purpose |
 |------|---------|
 | `01_setup.sql` | Database, schema, warehouse provisioning |
-| `02_staging_and_pipe.sql` | Internal stages, file formats, Snowpipe definitions |
-| `03_raw_tables.sql` | Raw table definitions |
-| `04_streams_and_tasks.sql` | Streams, Stored Procedure, Task scheduling |
-| `05_dynamic_tables.sql` | Analytics layer with Dynamic Table dependency chain |
-| `06_reporting_views.sql` | Business-facing reporting views |
+| `02_staging_and_pipe.sql` | Stages, two named file formats (different CSV structures), Snowpipe definitions |
+| `03_raw_tables.sql` | Raw table definitions with defensive patterns (`NULLIF`, `IF NOT EXISTS`, `_extra` overflow column) |
+| `04_streams_and_tasks.sql` | CDC Streams, UNPIVOT Stored Procedure, conditional Task scheduling |
+| `05_dynamic_tables.sql` | Analytics layer — 4 Dynamic Tables with dependency chaining |
+| `06_reporting_views.sql` | 5 business-facing reporting views |
 
 ---
 
 ### 2. 🏪 Retail Sales Pipeline
 
-**[View Project →](./Retail%20Sales%20Pipeline/)**
+**[View Project →](./retail-sales-pipeline/)**
 
-**Business Problem:** Retail organizations accumulate raw sales data across regions and product lines, but raw files alone can't drive decisions. This project builds a structured analytics pipeline — from raw CSV ingestion to clean, query-ready reporting views — simulating the work of a data engineer supporting a retail analytics team.
+**Business Problem:** Retail organizations accumulate raw transactional data across regions and product lines, but flat files alone can't drive business decisions. This project builds a structured, multi-layer analytics pipeline — from raw CSV ingestion through Snowpark Python transformations to clean, business-facing SQL views — simulating the workflow of a data engineer supporting a retail analytics team.
 
 **What I Built:**
-- Designed and provisioned the full Snowflake environment (database, schemas, warehouse)
-- Created internal stages and file formats for structured CSV ingestion
-- Defined raw tables and loaded data using `COPY INTO`
-- Wrote Snowpark Python transformations executed natively in Snowflake
-- Delivered business-facing SQL reporting views consumed downstream
+- Provisioned the full Snowflake environment from scratch (database, schemas, warehouse sizing)
+- Designed internal stages and named file formats for structured CSV ingestion
+- Loaded raw data into typed Bronze tables using `COPY INTO`
+- Authored **Snowpark Python** transformation logic executed natively within Snowflake — no external compute required
+- Delivered Gold-layer SQL reporting views ready for downstream BI consumption
+
+> 📸 *Screenshot placeholder — add Snowflake worksheet showing reporting view output here*
 
 **Pipeline Workflow:**
 
@@ -190,68 +235,86 @@ World Bank CSVs (4 files — free public data)
 CSV Source Files
       │
       ▼
-Internal Stage + File Format
+Internal Stage + Named File Format
       │  COPY INTO
       ▼
-Raw Tables (Bronze)
-      │  Snowpark Python
+Raw Tables (Bronze)  ← typed, unmodified source data
+      │  Snowpark Python (native Snowflake execution)
       ▼
-Transformed Tables (Silver)
+Transformed Tables (Silver)  ← cleaned, enriched, typed
       │  SQL
       ▼
-Reporting Views (Gold)
+Reporting Views (Gold)  ← business-ready, query-optimized
 ```
 
-**Tech Used:** Snowflake SQL, Snowpark Python, Virtual Warehouses, Internal Stages, COPY INTO, SQL Views
+**Tech Used:** Snowflake SQL · Snowpark Python · Virtual Warehouses · Internal Stages · COPY INTO · SQL Views · ELT architecture
+
+**How to Run:**
+
+> **Prerequisites:** Snowflake account · retail CSV source files · Snowsight or SnowSQL access
+
+1. Run `Part 1 - Setup.sql` to provision the database, schemas, and warehouse
+2. Run `Part 2 - Staging.sql` to create the internal stage and named file format
+3. Upload source CSV files to the internal stage via Snowsight or `PUT` command in SnowSQL
+4. Run `Part 3 - Loading Raw Data.sql` to define raw tables and execute `COPY INTO`
+5. Run `Part 4 - Snowpark Transformations.py` via a Snowflake Python worksheet or Snowpark session
+6. Run `Part 5 - Reporting Views.sql` to create the Gold-layer reporting views
+7. Query any reporting view to verify the full pipeline end-to-end
 
 | File | Purpose |
 |------|---------|
 | `Part 1 - Setup.sql` | Database, schema, and warehouse provisioning |
 | `Part 2 - Staging.sql` | Internal stage and file format creation |
-| `Part 3 - Loading Raw Data.sql` | Table definitions and COPY INTO commands |
-| `Part 4 - Snowpark Transformations.py` | Snowpark Python transformation logic |
-| `Part 5 - Reporting Views.sql` | Business-facing SQL views |
+| `Part 3 - Loading Raw Data.sql` | Raw table definitions and COPY INTO commands |
+| `Part 4 - Snowpark Transformations.py` | Snowpark Python transformation logic (native Snowflake execution) |
+| `Part 5 - Reporting Views.sql` | Business-facing Gold-layer SQL views |
 
 ---
 
 ### 3. 📊 End-to-End Analytics with Snowflake & Power BI
 
-**[View Project →](./End-to-End%20Analytics%20with%20Snowflake%20and%20Power%20BI/)**
+**[View Project →](./snowflake-powerbi-analytics/)**
 
-**Business Problem:** A food truck company (Tasty Bytes) needs a scalable analytics layer that non-technical stakeholders can consume through Power BI — with proper governance, third-party data enrichment, and an auto-refreshing data model. This project builds that full stack.
+**Business Problem:** Tasty Bytes, a multi-region food truck business, needs a governed analytics layer that non-technical stakeholders can access through Power BI — with automatic data refresh, third-party enrichment, enforced access controls, and an interactive web dashboard. This project builds that complete stack.
 
 **What I Built:**
-- Designed the foundational data access layer with region-based role segregation
-- Integrated **SafeGraph geospatial data** from the Snowflake Marketplace to enrich truck location data
-- Built a complete **star schema** using Snowflake Dynamic Tables (auto-refreshing on new data)
-- Applied **Snowflake Horizon** governance: PII masking, access policies, data quality monitoring
-- Delivered a **Streamlit dashboard** for regional sales analysis — deployed natively in Snowflake
+- Designed the foundational analytics data layer with **region-based role segregation** — analysts only see their region's data
+- Acquired and integrated **SafeGraph geospatial data** from the Snowflake Marketplace to enrich food truck location records with point-of-interest metadata
+- Built a complete **star schema** (fact + dimension tables) using Snowflake Dynamic Tables — auto-refreshing as upstream data changes
+- Applied **Snowflake Horizon** governance: dynamic PII masking, tag-based classification, row access policies, and data quality monitoring
+- Delivered a **Streamlit in Snowflake** regional sales dashboard — interactive, natively hosted, zero external infrastructure
+
+> 📸 *Screenshot placeholder — add Power BI dashboard and Streamlit app screenshots here*
 
 **Architecture:**
 
 ```
-Tasty Bytes Raw Data + SafeGraph Marketplace
-              │
-              ▼
-     Snowflake Dynamic Tables
-     (Star Schema: Fact + Dims)
-       Auto-refreshing via DAG
-              │
-     ┌────────┴────────┐
-     ▼                 ▼
-  Power BI         Streamlit App
-(Regional KPIs)  (Interactive Dashboard)
+Tasty Bytes Raw Data     SafeGraph (Marketplace)
+         │                       │
+         └───────────┬───────────┘
+                     │
+                     ▼
+          Snowflake Dynamic Tables
+          Star Schema: Fact + Dimensions
+          Auto-refreshing DAG (TARGET_LAG)
+          Horizon: RBAC · PII masking
+                     │
+           ┌─────────┴──────────┐
+           ▼                    ▼
+        Power BI           Streamlit App
+    (Regional KPIs)    (Interactive Dashboard)
+   Role-filtered views   Native Snowflake hosting
 ```
 
-**Tech Used:** Snowflake Dynamic Tables, Star Schema, Snowflake Marketplace, Snowflake Horizon, Power BI, Streamlit, RBAC
+**Tech Used:** Dynamic Tables · Star Schema · Dimensional Modeling · Snowflake Marketplace · Snowflake Horizon · Power BI · Streamlit · RBAC · DAG orchestration
 
-| Part | Focus |
-|------|-------|
-| Part 1 — Data Profiling | Data layer design + role-based access control |
-| Part 2 — Marketplace Data | SafeGraph geospatial enrichment |
-| Part 3 — Star Schema | Dynamic Tables for auto-refreshing analytics model |
-| Part 4 — Data Governance | Horizon: PII masking, access policies |
-| Streamlit App | Regional Sales Dashboard — interactive, live |
+| Part | Focus | Key Outcome |
+|------|-------|-------------|
+| Part 1 — Data Profiling | Foundational data layer + RBAC | Region-isolated analyst roles; access-controlled schemas |
+| Part 2 — Marketplace Data | SafeGraph geospatial enrichment | Food truck locations enriched with POI metadata |
+| Part 3 — Star Schema | Dynamic Tables for auto-refresh | Self-updating fact/dim model consumed by Power BI |
+| Part 4 — Data Governance | Horizon PII masking + policies | Sensitive fields masked; data quality alerts active |
+| Streamlit App | Regional Sales Dashboard | Interactive monthly sales analysis across global regions |
 
 ---
 
@@ -259,15 +322,15 @@ Tasty Bytes Raw Data + SafeGraph Marketplace
 
 **[View Project →](./Zero-to-Snowflake/)**
 
-A structured five-part series covering Snowflake fundamentals through hands-on labs. Designed to build both certification readiness and practical intuition for cloud data warehousing.
+A structured five-part guided series covering Snowflake fundamentals through hands-on labs — building both platform fluency and SnowPro Core certification readiness.
 
 | Part | Focus | Skills Gained |
 |------|-------|--------------|
-| **Part 1** | Setup & Fundamentals | Virtual Warehouse scaling, Query Result Cache, Zero-Copy Cloning, UNDROP, Resource Monitors |
+| **Part 1** | Setup & Fundamentals | Virtual Warehouse scaling, Query Result Cache, Zero-Copy Cloning, Time Travel + UNDROP, Resource Monitors, Budgets |
 | **Part 2** | Simple Data Pipeline | S3 external stage ingestion, VARIANT/semi-structured data, FLATTEN, Dynamic Tables, DAG visualization |
-| **Part 3** | Cortex AI | LLM model playground, Cortex AI Functions, Cortex Search, Cortex Analyst (conversational queries) |
-| **Part 4** | Governance with Horizon | PII classification, dynamic data masking, access control policies, data quality monitoring |
-| **Part 5** | Apps & Collaboration | Snowflake Marketplace, Streamlit in Snowflake, weather + geospatial data enrichment |
+| **Part 3** | Cortex AI | LLM playground, Cortex AI Functions (systematic feedback processing), Cortex Search, Cortex Analyst (conversational SQL) |
+| **Part 4** | Governance with Horizon | PII classification, dynamic data masking, row access policies, data quality monitoring |
+| **Part 5** | Apps & Collaboration | Snowflake Marketplace data shares, Streamlit in Snowflake, weather + geospatial enrichment for sales analysis |
 
 ---
 
@@ -276,7 +339,7 @@ A structured five-part series covering Snowflake fundamentals through hands-on l
 ```
 Snowflake/
 │
-├── world-population-pipeline/          ← 🌍 Flagship independent project
+├── world-population-pipeline/          ← 🌍 Flagship (Snowpipe · CDC Streams · Tasks · Dynamic Tables)
 │   ├── 01_setup.sql
 │   ├── 02_staging_and_pipe.sql
 │   ├── 03_raw_tables.sql
@@ -284,34 +347,23 @@ Snowflake/
 │   ├── 05_dynamic_tables.sql
 │   ├── 06_reporting_views.sql
 │   └── docs/
-│       ├── 01_setup_README.md
-│       ├── 02_staging_and_pipe_README.md
-│       ├── 03_raw_tables_README.md
-│       ├── 04_streams_and_tasks_README.md
-│       ├── 05_dynamic_tables_README.md
-│       └── 06_reporting_views_README.md
 │
-├── Retail Sales Pipeline/              ← 🏪 Independent pipeline project
+├── retail-sales-pipeline/              ← 🏪 ELT pipeline with Snowpark Python
 │   ├── Part 1 - Setup.sql
 │   ├── Part 2 - Staging.sql
 │   ├── Part 3 - Loading Raw Data.sql
 │   ├── Part 4 - Snowpark Transformations.py
 │   ├── Part 5 - Reporting Views.sql
 │   └── docs/
-│       ├── 01_setup_README.md
-│       ├── 02_staging_README.md
-│       ├── 03_load_raw_README.md
-│       ├── 04_snowpark_transforms_README.md
-│       └── 05_reporting_views_README.md
 │
-├── End-to-End Analytics with Snowflake and Power BI/   ← 📊 Full analytics stack
-│   ├── Part-1/   ← Data Profiling + Access Control
+├── snowflake-powerbi-analytics/        ← 📊 Star schema · Power BI · Streamlit · Horizon
+│   ├── Part-1/   ← Data Profiling + RBAC
 │   ├── Part-2/   ← Marketplace Data (SafeGraph)
 │   ├── Part-3/   ← Star Schema with Dynamic Tables
 │   ├── Part-4/   ← Data Governance (Horizon)
 │   └── Streamlit/   ← Regional Sales Dashboard
 │
-├── Zero-to-Snowflake/                  ← 📚 Core quickstart labs
+├── Zero-to-Snowflake/                  ← 📚 Core quickstart labs (guided)
 │   ├── Part-1/   ← Setup & Fundamentals
 │   ├── Part-2/   ← Simple Data Pipeline
 │   ├── Part-3/   ← Cortex AI
@@ -322,6 +374,8 @@ Snowflake/
 └── README.md
 ```
 
+> **Note on folder naming:** Independent projects use lowercase hyphen-separated names (`world-population-pipeline`, `retail-sales-pipeline`, `snowflake-powerbi-analytics`) for clean GitHub URL rendering and consistent navigation.
+
 ---
 
 ## 🎓 Certification
@@ -329,18 +383,20 @@ Snowflake/
 **SnowPro Core Certification — Snowflake**
 - Status: 🟡 In Progress
 - Candidate: Ezra Bayewitz
-- Covers: Virtual Warehouses, Data Sharing, Performance Tuning, Security, Semi-Structured Data, Cortex AI, Data Governance
+- Domains: Virtual Warehouses · Data Loading & Transformation · Performance Optimization · Security & Governance · Semi-Structured Data · Cortex AI · Data Sharing
 
 ---
 
 ## 🔮 What's Next
 
 - [ ] Complete SnowPro Core Certification
-- [ ] Add query result screenshots to World Population Pipeline reporting views
-- [ ] Add Power BI screenshots and dashboard walkthrough to End-to-End Analytics project
+- [ ] Replace ASCII architecture diagrams with visual diagrams (Excalidraw / Lucidchart)
+- [ ] Add Snowflake DAG screenshots for World Population Pipeline
+- [ ] Add Power BI dashboard screenshots to End-to-End Analytics project
 - [ ] Add Streamlit app screenshots to Regional Sales Dashboard
-- [ ] Add schema diagrams for Retail Sales Pipeline
-- [ ] Expand World Population Pipeline with additional indicators (literacy, life expectancy)
+- [ ] Add query output screenshots for World Population reporting views
+- [ ] Expand World Population Pipeline with additional World Bank indicators (literacy rate, life expectancy)
+- [ ] Explore dbt Core integration as a declarative SQL transformation layer
 - [ ] Explore Snowflake Data Clean Rooms
 
 ---
@@ -352,4 +408,4 @@ Snowflake/
 
 ---
 
-*Built while preparing for SnowPro Core certification and developing practical cloud data engineering skills.*
+*Focused on building production-style cloud data engineering workflows using Snowflake, Snowpark, and modern analytics tooling.*
