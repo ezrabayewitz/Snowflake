@@ -109,7 +109,7 @@ Raw Data Sources
 
 ### 1. 🌍 World Population & Geographic Trends Pipeline — *Flagship Project*
 
-**[View Project →](./world-population-pipeline/)**
+**[View Project →](./World Population & Geographic Trends Pipeline/)**
 
 **Business Problem:** Global organizations and analysts need to understand long-term demographic and economic trends across countries — but World Bank data arrives as wide, country-per-row CSVs spanning 60+ years. This project builds a fully automated pipeline that ingests, reshapes, and continuously refreshes that data into a queryable analytics layer, answering real geographic and economic questions.
 
