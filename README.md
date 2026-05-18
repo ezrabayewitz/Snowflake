@@ -140,7 +140,8 @@ Raw Data Sources
 - Built a **4-table Dynamic Table dependency chain** refreshing every 5 minutes: `country_profiles` → `urbanization_growth` → `gdp_population_efficiency` → `regional_trends`
 - Delivered **5 business-facing reporting views** covering urbanization velocity, GDP leadership, regional trend analysis, country snapshots, and urbanization-GDP correlation
 
-![Pipeline DAG](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
+![Query Result 1](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
+![Query Result 2](./world-population-pipeline/docs/img/urban-growth-countries-query.png)
 
 **Pipeline Architecture:**
 
