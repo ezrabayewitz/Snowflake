@@ -22,7 +22,7 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 
 ## 🖼️ Featured Outputs
 
-> 📸 *Screenshots coming soon — architecture diagrams, Snowflake DAG views, Power BI dashboards, and Streamlit app*
+> 📸 *Screenshots coming soon — Power BI dashboards, and Streamlit app*
 
 ![Pipeline DAG](./world-population-pipeline/docs/img/dynamic-table.png)
 ![Power BI Dashboard](<img width="704" height="500" alt="image" src="https://github.com/user-attachments/assets/509e18ba-4053-4f27-93b4-2fcd0dadfa49" />)
