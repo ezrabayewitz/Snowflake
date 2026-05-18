@@ -351,6 +351,7 @@ Snowflake/
 │   ├── 03-raw-data-loading.sql
 │   ├── 04-data-transformation-snowpark.py
 │   ├── 05-sales-reporting-views.sql
+│   └── docs/
 │
 ├── snowflake-powerbi-analytics/        ← 📊 Star schema · Power BI · Streamlit · Horizon
 │   ├── Part-1/   ← Data Profiling + RBAC
@@ -358,6 +359,7 @@ Snowflake/
 │   ├── Part-3/   ← Star Schema with Dynamic Tables
 │   ├── Part-4/   ← Data Governance (Horizon)
 │   └── Streamlit/   ← Regional Sales Dashboard
+│   └── docs/
 │
 ├── Zero-to-Snowflake/                  ← 📚 Core quickstart labs (guided)
 │   ├── Part-1/   ← Setup & Fundamentals
@@ -365,6 +367,7 @@ Snowflake/
 │   ├── Part-3/   ← Cortex AI
 │   ├── Part-4/   ← Governance with Horizon
 │   └── Part-5/   ← Apps & Collaboration
+│   └── docs/
 │
 ├── notes/                              ← 📝 SnowPro Core study notes
 └── README.md
