@@ -387,10 +387,8 @@ Snowflake/
 
 - [ ] Complete SnowPro Core Certification
 - [ ] Replace ASCII architecture diagrams with visual diagrams (Excalidraw / Lucidchart)
-- [ ] Add Snowflake DAG screenshots for World Population Pipeline
 - [ ] Add Power BI dashboard screenshots to End-to-End Analytics project
 - [ ] Add Streamlit app screenshots to Regional Sales Dashboard
-- [ ] Add query output screenshots for World Population reporting views
 - [ ] Expand World Population Pipeline with additional World Bank indicators (literacy rate, life expectancy)
 - [ ] Explore dbt Core integration as a declarative SQL transformation layer
 - [ ] Explore Snowflake Data Clean Rooms
