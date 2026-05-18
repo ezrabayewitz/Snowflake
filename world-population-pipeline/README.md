@@ -98,12 +98,12 @@ World Bank CSVs (4 files, free public data)
 ```
 world-population-pipeline/
 │
-├── 01_setup.sql
-├── 02_staging_and_pipe.sql
-├── 03_raw_tables.sql
-├── 04_streams_and_tasks.sql
-├── 05_dynamic_tables.sql
-├── 06_reporting_views.sql
+├── 01-environment-setup.sql
+├── 02-creating-raw-tables.sql
+├── 03-data-ingestion-snowpipe.sql
+├── 04-data-transformation.sql
+├── 05-analytics-data-model.sql
+├── 06-business-reporting-views.sql
 │
 └── docs/
     ├── 01_setup_README.md

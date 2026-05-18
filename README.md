@@ -27,7 +27,7 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 <!-- SCREENSHOT PLACEHOLDER: Add 3-4 images here once captured
 Suggested layout:
 ![Pipeline DAG](./world-population-pipeline/docs/img/dag_screenshot.png)
-![Power BI Dashboard](./snowflake-powerbi-analytics/docs/img/powerbi_dashboard.png)
+![Power BI Dashboard](<img width="704" height="500" alt="image" src="https://github.com/user-attachments/assets/509e18ba-4053-4f27-93b4-2fcd0dadfa49" />)
 ![Streamlit Dashboard](./snowflake-powerbi-analytics/Streamlit/docs/img/streamlit_dashboard.png)
 ![Query Results](./world-population-pipeline/docs/img/reporting_view_results.png)
 -->
@@ -340,21 +340,20 @@ A structured five-part guided series covering Snowflake fundamentals through han
 Snowflake/
 │
 ├── world-population-pipeline/          ← 🌍 Flagship (Snowpipe · CDC Streams · Tasks · Dynamic Tables)
-│   ├── 01_setup.sql
-│   ├── 02_staging_and_pipe.sql
-│   ├── 03_raw_tables.sql
-│   ├── 04_streams_and_tasks.sql
-│   ├── 05_dynamic_tables.sql
-│   ├── 06_reporting_views.sql
-│   └── docs/
+│  ├── 01-environment-setup.sql
+│  ├── 02-creating-raw-tables.sql
+│  ├── 03-data-ingestion-snowpipe.sql
+│  ├── 04-data-transformation.sql
+│  ├── 05-analytics-data-model.sql
+│  ├── 06-business-reporting-views.sql
+│  └── docs/
 │
 ├── retail-sales-pipeline/              ← 🏪 ELT pipeline with Snowpark Python
-│   ├── Part 1 - Setup.sql
-│   ├── Part 2 - Staging.sql
-│   ├── Part 3 - Loading Raw Data.sql
-│   ├── Part 4 - Snowpark Transformations.py
-│   ├── Part 5 - Reporting Views.sql
-│   └── docs/
+│   ├── 01-environment-setup.sql
+│   ├── 02-data-ingestion-setup.sql
+│   ├── 03-raw-data-loading.sql
+│   ├── 04-data-transformation-snowpark.py
+│   ├── 05-sales-reporting-views.sql
 │
 ├── snowflake-powerbi-analytics/        ← 📊 Star schema · Power BI · Streamlit · Horizon
 │   ├── Part-1/   ← Data Profiling + RBAC
