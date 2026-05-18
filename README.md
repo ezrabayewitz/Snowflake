@@ -85,28 +85,41 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 > 📐 *Architecture diagram coming soon — see reference below*
 ---
 
-World Bank CSVs (4 files · free public data · no account required)
-              │
-              │  Snowpipe (manual REFRESH)
-              ▼
-        RAW SCHEMA
-  population_raw / indicators_raw / countries_raw
-  (wide: 1 row per country · 60+ year columns)
-              │
-              │  APPEND_ONLY Streams (CDC)
-              │  Task: every 5 min · fires only if stream has data
-              │  Stored Procedure: UNPIVOT wide → long
-              ▼
-        ANALYTICS SCHEMA
-  country_year_metrics  (long: 1 row per country/year/indicator)
-  Dynamic Tables (5-min lag · dependency-chained):
-    country_profiles → urbanization_growth
-    → gdp_population_efficiency → regional_trends
-              │
-              │  SQL Views
-              ▼
-        REPORTING SCHEMA
-  5 business-facing views (see table below)
+Raw Data Sources
+(World Bank CSVs · Retail CSVs · S3 · Snowflake Marketplace)
+                    │
+                    ▼
+    ┌─────────────────────────────┐
+    │      Ingestion Layer        │
+    │  Snowpipe · COPY INTO       │
+    │  Internal & External Stages │
+    │  Named File Formats         │
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Bronze / Raw          │  ← Unprocessed source tables
+    │  Streams (CDC) monitoring   │    Wide-format public datasets
+    └──────────────┬──────────────┘
+                   │  Tasks + Stored Procedures
+                   │  (conditional: SYSTEM$STREAM_HAS_DATA)
+                   ▼
+    ┌─────────────────────────────┐
+    │      Silver / Analytics     │  ← UNPIVOT · clean typed data
+    │  Dynamic Tables (5-min lag) │    country_year_metrics
+    │  Dependency-chained DAG     │    Star Schema (Fact + Dims)
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Gold / Reporting      │  ← SQL Views · Horizon RBAC
+    │  Business-facing views      │    PII masking · access policies
+    └──────────┬──────────────────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+    Power BI        Streamlit
+  (Dashboards)    (Interactive App)
   
 ---
 
