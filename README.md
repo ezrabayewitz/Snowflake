@@ -84,7 +84,7 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 
 > 📐 *Architecture diagram coming soon — see reference below*
 
-![Pipeline Architecture](./world-population-pipeline/docs/img/dynamic-table.png)
+![Pipeline Architecture](./docs/pipeline-architecture.png)
 ---
 
 ## 📁 Projects
