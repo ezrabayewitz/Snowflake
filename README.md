@@ -83,8 +83,8 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 ## 🏗️ Portfolio Architecture Overview
 
 > 📐 *Architecture diagram coming soon — see reference below*
----
-
+> 
+```
 Raw Data Sources
 (World Bank CSVs · Retail CSVs · S3 · Snowflake Marketplace)
                     │
@@ -120,10 +120,7 @@ Raw Data Sources
        ▼                ▼
     Power BI        Streamlit
   (Dashboards)    (Interactive App)
-  
----
-
-## 📁 Projects
+```
 
 ---
 
