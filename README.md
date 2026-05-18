@@ -83,11 +83,44 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 ## 🏗️ Portfolio Architecture Overview
 
 > 📐 *Architecture diagram coming soon — see reference below*
-
-![Pipeline Architecture](./docs/pipeline-architecture.png)
----
-
-## 📁 Projects
+> 
+```
+Raw Data Sources
+(World Bank CSVs · Retail CSVs · S3 · Snowflake Marketplace)
+                    │
+                    ▼
+    ┌─────────────────────────────┐
+    │      Ingestion Layer        │
+    │  Snowpipe · COPY INTO       │
+    │  Internal & External Stages │
+    │  Named File Formats         │
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Bronze / Raw          │  ← Unprocessed source tables
+    │  Streams (CDC) monitoring   │    Wide-format public datasets
+    └──────────────┬──────────────┘
+                   │  Tasks + Stored Procedures
+                   │  (conditional: SYSTEM$STREAM_HAS_DATA)
+                   ▼
+    ┌─────────────────────────────┐
+    │      Silver / Analytics     │  ← UNPIVOT · clean typed data
+    │  Dynamic Tables (5-min lag) │    country_year_metrics
+    │  Dependency-chained DAG     │    Star Schema (Fact + Dims)
+    └──────────────┬──────────────┘
+                   │
+                   ▼
+    ┌─────────────────────────────┐
+    │       Gold / Reporting      │  ← SQL Views · Horizon RBAC
+    │  Business-facing views      │    PII masking · access policies
+    └──────────┬──────────────────┘
+               │
+       ┌───────┴────────┐
+       ▼                ▼
+    Power BI        Streamlit
+  (Dashboards)    (Interactive App)
+```
 
 ---
 
@@ -107,7 +140,8 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 - Built a **4-table Dynamic Table dependency chain** refreshing every 5 minutes: `country_profiles` → `urbanization_growth` → `gdp_population_efficiency` → `regional_trends`
 - Delivered **5 business-facing reporting views** covering urbanization velocity, GDP leadership, regional trend analysis, country snapshots, and urbanization-GDP correlation
 
-> 📸 *Screenshot placeholder — add query output from `v_top_urbanizing_countries` and `v_gdp_leaders_2023` here*
+![Query Result 1](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
+![Query Result 2](./world-population-pipeline/docs/img/urban-growth-countries-query.png)
 
 **Pipeline Architecture:**
 
@@ -165,12 +199,12 @@ World Bank CSVs (4 files · free public data · no account required)
 
 | File | Purpose |
 |------|---------|
-| `01_setup.sql` | Database, schema, warehouse provisioning |
-| `02_staging_and_pipe.sql` | Stages, two named file formats (different CSV structures), Snowpipe definitions |
-| `03_raw_tables.sql` | Raw table definitions with defensive patterns (`NULLIF`, `IF NOT EXISTS`, `_extra` overflow column) |
-| `04_streams_and_tasks.sql` | CDC Streams, UNPIVOT Stored Procedure, conditional Task scheduling |
-| `05_dynamic_tables.sql` | Analytics layer — 4 Dynamic Tables with dependency chaining |
-| `06_reporting_views.sql` | 5 business-facing reporting views |
+| `01-environment-setup.sql` | Database, schema, warehouse provisioning |
+| `02-creating-raw-tables.sql` | Stages, two named file formats (different CSV structures), Snowpipe definitions |
+| `03-data-ingestion-snowpipe.sql` | Raw table definitions with defensive patterns (`NULLIF`, `IF NOT EXISTS`, `_extra` overflow column) |
+| `04-data-transformation.sql` | CDC Streams, UNPIVOT Stored Procedure, conditional Task scheduling |
+| `05-analytics-data-model.sql` | Analytics layer — 4 Dynamic Tables with dependency chaining |
+| `06-business-reporting-views.sql` | 5 business-facing reporting views |
 
 ---
 
@@ -353,10 +387,8 @@ Snowflake/
 
 - [ ] Complete SnowPro Core Certification
 - [ ] Replace ASCII architecture diagrams with visual diagrams (Excalidraw / Lucidchart)
-- [ ] Add Snowflake DAG screenshots for World Population Pipeline
 - [ ] Add Power BI dashboard screenshots to End-to-End Analytics project
 - [ ] Add Streamlit app screenshots to Regional Sales Dashboard
-- [ ] Add query output screenshots for World Population reporting views
 - [ ] Expand World Population Pipeline with additional World Bank indicators (literacy rate, life expectancy)
 - [ ] Explore dbt Core integration as a declarative SQL transformation layer
 - [ ] Explore Snowflake Data Clean Rooms
