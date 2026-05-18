@@ -199,12 +199,12 @@ World Bank CSVs (4 files · free public data · no account required)
 
 | File | Purpose |
 |------|---------|
-| `01_setup.sql` | Database, schema, warehouse provisioning |
-| `02_staging_and_pipe.sql` | Stages, two named file formats (different CSV structures), Snowpipe definitions |
-| `03_raw_tables.sql` | Raw table definitions with defensive patterns (`NULLIF`, `IF NOT EXISTS`, `_extra` overflow column) |
-| `04_streams_and_tasks.sql` | CDC Streams, UNPIVOT Stored Procedure, conditional Task scheduling |
-| `05_dynamic_tables.sql` | Analytics layer — 4 Dynamic Tables with dependency chaining |
-| `06_reporting_views.sql` | 5 business-facing reporting views |
+| `01-environment-setup.sql` | Database, schema, warehouse provisioning |
+| `02-creating-raw-tables.sql` | Stages, two named file formats (different CSV structures), Snowpipe definitions |
+| `03-data-ingestion-snowpipe.sql` | Raw table definitions with defensive patterns (`NULLIF`, `IF NOT EXISTS`, `_extra` overflow column) |
+| `04-data-transformation.sql` | CDC Streams, UNPIVOT Stored Procedure, conditional Task scheduling |
+| `05-analytics-data-model.sql` | Analytics layer — 4 Dynamic Tables with dependency chaining |
+| `06-business-reporting-views.sql` | 5 business-facing reporting views |
 
 ---
 
