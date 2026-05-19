@@ -1,3 +1,6 @@
+-- This script sets up the environment for the retail sales pipeline project.
+-- It creates a database, schemas, and a warehouse for the project.
+
 CREATE DATABASE if not exists Retail_Pipeline;
 
 CREATE SCHEMA IF NOT EXISTS RETAIL_PIPELINE.RAW;
