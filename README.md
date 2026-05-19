@@ -247,21 +247,21 @@ Reporting Views (Gold)  ← business-ready, query-optimized
 
 > **Prerequisites:** Snowflake account · retail CSV source files · Snowsight or SnowSQL access
 
-1. Run `Part 1 - Setup.sql` to provision the database, schemas, and warehouse
-2. Run `Part 2 - Staging.sql` to create the internal stage and named file format
+1. Run `01-environment-setup.sql` to provision the database, schemas, and warehouse
+2. Run `02-data-ingestion-setup.sql` to create the internal stage and named file format
 3. Upload source CSV files to the internal stage via Snowsight or `PUT` command in SnowSQL
-4. Run `Part 3 - Loading Raw Data.sql` to define raw tables and execute `COPY INTO`
-5. Run `Part 4 - Snowpark Transformations.py` via a Snowflake Python worksheet or Snowpark session
-6. Run `Part 5 - Reporting Views.sql` to create the Gold-layer reporting views
+4. Run `03-raw-data-loading.sql` to define raw tables and execute `COPY INTO`
+5. Run `04-data-trasnformation-snowpark.py` via a Snowflake Python worksheet or Snowpark session
+6. Run `05-sales-reporting-views.sql` to create the Gold-layer reporting views
 7. Query any reporting view to verify the full pipeline end-to-end
 
 | File | Purpose |
 |------|---------|
-| `Part 1 - Setup.sql` | Database, schema, and warehouse provisioning |
-| `Part 2 - Staging.sql` | Internal stage and file format creation |
-| `Part 3 - Loading Raw Data.sql` | Raw table definitions and COPY INTO commands |
-| `Part 4 - Snowpark Transformations.py` | Snowpark Python transformation logic (native Snowflake execution) |
-| `Part 5 - Reporting Views.sql` | Business-facing Gold-layer SQL views |
+| `01-environment-setup.sql.sql` | Database, schema, and warehouse provisioning |
+| `02-data-ingestion-setup.sql` | Internal stage and file format creation |
+| `03-raw-data-loading.sql` | Raw table definitions and COPY INTO commands |
+| `04-data-trasnformation-snowpark.py` | Snowpark Python transformation logic (native Snowflake execution) |
+| `05-sales-reporting-views.sql` | Business-facing Gold-layer SQL views |
 
 ---
 
