@@ -85,3 +85,8 @@ SELECT * FROM vw_revenue_by_state      LIMIT 5;
 SELECT * FROM vw_customer_ltv          LIMIT 5;
 SELECT * FROM vw_top_categories        LIMIT 5;
 SELECT * FROM vw_delivery_performance  LIMIT 5;
+
+
+
+-- For more information on this script, go to:
+-- retail-sales-pipeline/docs/README's/05-sales-reporting-views-README.md/

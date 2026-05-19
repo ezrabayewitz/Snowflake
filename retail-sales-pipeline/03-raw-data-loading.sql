@@ -119,3 +119,7 @@ SELECT 'customers' AS tbl, COUNT(*) AS row_count FROM customers_raw     UNION AL
 SELECT 'items'     AS tbl, COUNT(*) AS row_count FROM order_items_raw   UNION ALL
 SELECT 'products'  AS tbl, COUNT(*) AS row_count FROM products_raw      UNION ALL
 SELECT 'payments'  AS tbl, COUNT(*) AS row_count FROM order_payments_raw;
+
+
+-- For more information on this script, go to:
+-- retail-sales-pipeline/docs/README's/03-raw-data-loading-README.md/

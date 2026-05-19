@@ -102,3 +102,7 @@ def main(session: Session):
     print(f"dim_products rows: {dim_products.count()}")
 
     return "✓ All analytics tables written successfully"
+
+
+## For more information on this script, go to:
+## retail-sales-pipeline/docs/README's/04-data-transformation-snowpark-README.md/

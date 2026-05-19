@@ -19,3 +19,8 @@ CREATE STAGE IF NOT EXISTS raw_stage
 -- List the contents of the stage to verify that it has been set up correctly.
 
   LIST @raw_stage;
+
+
+
+-- For more information on this script, go to:
+-- retail-sales-pipeline/docs/README's/02-data-ingestion-setup-README.md/

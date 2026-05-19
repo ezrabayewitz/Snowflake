@@ -1,3 +1,6 @@
+-- In this section, the script creates the raw tables where data will be ingested 
+-- into.
+
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA RAW;
 USE WAREHOUSE WORLD_WH;

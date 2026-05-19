@@ -15,3 +15,5 @@ CREATE WAREHOUSE IF NOT EXISTS RETAIL_WH
 Use DATABASE RETAIL_PIPELINE;
 use warehouse retail_wh;
   
+-- For more information on this script, go to:
+-- retail-sales-pipeline/docs/README's/01-environment-setup-README.md/

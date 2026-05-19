@@ -1,3 +1,6 @@
+-- In this section, the data ingestion environment is set up.
+
+
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA RAW;
 USE WAREHOUSE WORLD_WH;
