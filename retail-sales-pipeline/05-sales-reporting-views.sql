@@ -1,3 +1,5 @@
+-- Create sales reporting views tables
+
 USE DATABASE RETAIL_PIPELINE;
 USE SCHEMA REPORTING;
 USE WAREHOUSE RETAIL_WH;
