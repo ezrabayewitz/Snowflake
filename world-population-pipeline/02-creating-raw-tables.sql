@@ -2,6 +2,7 @@ USE DATABASE WORLD_POPULATION;
 USE SCHEMA RAW;
 USE WAREHOUSE WORLD_WH;
 
+-- 
 
 CREATE OR REPLACE TABLE countries_raw (
     country_code        VARCHAR,
@@ -13,6 +14,7 @@ CREATE OR REPLACE TABLE countries_raw (
 );
 
 -- Population by country and year
+
 CREATE TABLE IF NOT EXISTS population_raw (
     country_name        VARCHAR,
     country_code        VARCHAR,
@@ -89,6 +91,7 @@ CREATE TABLE IF NOT EXISTS population_raw (
 
 -- Economic and social indicators (GDP per capita + urbanization)
 -- Same wide format as population — one column per year
+
 CREATE TABLE IF NOT EXISTS indicators_raw (
     country_name        VARCHAR,
     country_code        VARCHAR,

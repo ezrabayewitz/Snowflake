@@ -1,3 +1,6 @@
+-- create the environment for the world population pipeline. This includes the database,
+-- the 3 schemas of our pipeline (RAW, ANALYTICS, REPORTING), and the warehouse.
+
 CREATE DATABASE IF NOT EXISTS WORLD_POPULATION;
 
 CREATE SCHEMA IF NOT EXISTS WORLD_POPULATION.RAW;

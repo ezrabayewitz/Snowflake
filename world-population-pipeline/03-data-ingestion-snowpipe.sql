@@ -21,11 +21,13 @@ CREATE OR REPLACE FILE FORMAT world_bank_metadata_csv
   COMPRESSION = 'AUTO';
 
 -- Internal stage
+
 CREATE STAGE IF NOT EXISTS world_stage
     FILE_FORMAT = (FORMAT_NAME = world_bank_csv)
     COMMENT = 'Internal stage for World Bank CSV uploads';
 
 -- Snowpipe for population data
+
 CREATE OR REPLACE PIPE pop_pipe
   AUTO_INGEST = FALSE
   AS
@@ -36,6 +38,7 @@ CREATE OR REPLACE PIPE pop_pipe
 
   
 -- Snowpipe for GDP/indicators data
+
 CREATE OR REPLACE PIPE indicators_pipe
   AUTO_INGEST = FALSE
   AS
@@ -45,6 +48,7 @@ CREATE OR REPLACE PIPE indicators_pipe
   ON_ERROR = 'CONTINUE';
 
 -- Snowpipe for country metadata
+
 CREATE OR REPLACE PIPE countries_pipe
   AUTO_INGEST = FALSE
   AS
