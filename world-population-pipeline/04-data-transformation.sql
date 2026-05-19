@@ -163,3 +163,7 @@ SELECT indicator_code, COUNT(*) AS row_count
 FROM ANALYTICS.country_year_metrics
 GROUP BY indicator_code
 ORDER BY row_count DESC;
+
+
+-- For more information on this script, go to:
+-- world-population-pipeline/docs/README's/04-data-transformation-README.md/

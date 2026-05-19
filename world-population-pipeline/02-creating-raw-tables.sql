@@ -166,3 +166,6 @@ CREATE TABLE IF NOT EXISTS indicators_raw (
     _extra              VARCHAR
     );
 
+
+-- For more information on this script, go to:
+-- world-population-pipeline/docs/README's/02-creating-raw-tables-README.md/

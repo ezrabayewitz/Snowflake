@@ -108,3 +108,7 @@ FROM ANALYTICS.country_profiles
 WHERE region IS NOT NULL
   AND year BETWEEN 1990 AND 2023
 GROUP BY region, year;
+
+
+-- For more information on this script, go to:
+-- world-population-pipeline/docs/README's/05-analytics-data-model-README.md/

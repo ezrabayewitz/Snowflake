@@ -1,4 +1,4 @@
--- create the environment for the world population pipeline. This includes the database,
+-- Create the environment for the world population pipeline. This includes the database,
 -- the 3 schemas of our pipeline (RAW, ANALYTICS, REPORTING), and the warehouse.
 
 CREATE DATABASE IF NOT EXISTS WORLD_POPULATION;
@@ -14,3 +14,7 @@ CREATE WAREHOUSE IF NOT EXISTS WORLD_WH
 
 USE DATABASE WORLD_POPULATION;
 USE WAREHOUSE WORLD_WH;
+
+
+-- For more information on this script, go to:
+-- world-population-pipeline/docs/README's/01-environment-setup-README.md/
