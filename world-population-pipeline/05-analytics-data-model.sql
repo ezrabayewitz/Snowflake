@@ -1,10 +1,13 @@
+-- In this section, 4 dynamic tables will be created. These tables carry the purpose
+-- of self-updating, and create the analytics layer of the pipeline.
+
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA ANALYTICS;
 USE WAREHOUSE WORLD_WH;
 
 
 --------------------------------------------------
--- DT 1: Country profile
+-- Dynamic Table 1: Country profile
 -- One row per country/year with all 3 indicators
 -- joined together and country metadata attached
 --------------------------------------------------
@@ -30,7 +33,7 @@ GROUP BY
 
 
 --------------------------------------------------
--- DT 2: Urbanization growth
+-- Dynamic Table 2: Urbanization growth
 -- Which countries/regions urbanized fastest?
 -- Compares urban_pct in 2000 vs most recent year
 --------------------------------------------------
@@ -56,7 +59,7 @@ ORDER BY urban_growth_pct DESC;
 
 
 --------------------------------------------------
--- DT 3: GDP vs population efficiency
+-- Dynamic Table 3: GDP vs population efficiency
 -- "Punching above weight" — countries with high
 -- GDP per capita relative to population size
 --------------------------------------------------
@@ -87,7 +90,7 @@ WHERE cp.year = 2023
 
 
 --------------------------------------------------
--- DT 4: Regional summary
+-- Dynamic Table 4: Regional summary
 -- Aggregated stats per region per year
 --------------------------------------------------
 

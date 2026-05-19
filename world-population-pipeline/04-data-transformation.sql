@@ -1,10 +1,14 @@
+-- In this section, raw data is transformed into analysis-ready tables. This is done
+-- through advanced Snowflake features such as Streams, Procedures, and Tasks.
+
+
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA ANALYTICS;
 USE WAREHOUSE WORLD_WH;
 
 
 --------------------------------------------------
--- ANALYTICS TARGET TABLE (long/unpivoted format)
+-- CREATE ANALYTICS TARGET TABLE (long/unpivoted format)
 --------------------------------------------------
 
 CREATE OR REPLACE TABLE ANALYTICS.country_year_metrics (
