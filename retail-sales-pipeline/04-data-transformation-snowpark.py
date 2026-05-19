@@ -40,6 +40,8 @@ def main(session: Session):
         count("ORDER_ITEM_ID").alias("NUM_ITEMS")
     )
 
+    # create fact orders table
+
     fct_orders = (
         orders
         .join(payments_agg, on="ORDER_ID", how="left")
