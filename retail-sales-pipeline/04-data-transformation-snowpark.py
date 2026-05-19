@@ -1,6 +1,15 @@
+# This script performs data transformation using Snowpark to create analytics tables from the raw data.
+# import necessary Snowpark modules and functions
+
 from snowflake.snowpark import Session
 import snowflake.snowpark.functions as F
 from snowflake.snowpark.functions import col, to_date, datediff, avg, sum as sum_, count, round as round_
+
+
+
+# Define the main function that will be executed when the script is run.
+# This function will perform the data transformations and write the results to new tables in the ANALYTICS schema.
+
 
 def main(session: Session):
 
@@ -11,9 +20,14 @@ def main(session: Session):
     # FACT TABLE: fct_orders
     # -------------------------------------------------------
 
+
+    # create variables for the raw tables
+
     orders   = session.table("RAW.ORDERS_RAW")
     payments = session.table("RAW.ORDER_PAYMENTS_RAW")
     items    = session.table("RAW.ORDER_ITEMS_RAW")
+
+    # group payments and items by ORDER_ID and calculate the values in quotations
 
     payments_agg = payments.group_by("ORDER_ID").agg(
         sum_("PAYMENT_VALUE").alias("TOTAL_PAYMENT"),

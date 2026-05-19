@@ -1,7 +1,10 @@
+-- This script loads raw data into Snowflake tables for the retail sales pipeline project.
+
 USE DATABASE RETAIL_PIPELINE;
 USE SCHEMA RAW;
 USE WAREHOUSE RETAIL_WH;
 
+-- Create a file format for the CSV files to ensure consistent parsing of the data.
 
 CREATE OR REPLACE FILE FORMAT retail_csv_format
   TYPE = 'CSV'
@@ -10,6 +13,9 @@ CREATE OR REPLACE FILE FORMAT retail_csv_format
   NULL_IF = ('NULL', 'null', '')
   EMPTY_FIELD_AS_NULL = TRUE;
 
+
+-- Create raw orders table. The table structure is based on 
+-- the columns present in the olist_orders_dataset.csv file.
 
 CREATE OR REPLACE TABLE orders_raw (
     order_id                VARCHAR,
@@ -22,6 +28,8 @@ CREATE OR REPLACE TABLE orders_raw (
     order_estimated_delivery_date TIMESTAMP_NTZ
 );
 
+-- Create raw customers table. The table structure is based on
+-- the columns present in the olist_customers_dataset.csv file.
 
 CREATE OR REPLACE TABLE customers_raw (
     customer_id             VARCHAR,
@@ -31,6 +39,8 @@ CREATE OR REPLACE TABLE customers_raw (
     customer_state          VARCHAR
 );
 
+-- Create raw order items table. The table structure is based on
+-- the columns present in the olist_order_items_dataset.csv file.
 
 CREATE OR REPLACE TABLE order_items_raw (
     order_id                VARCHAR,
@@ -42,6 +52,8 @@ CREATE OR REPLACE TABLE order_items_raw (
     freight_value           NUMBER(10,2)
 );
 
+-- Create raw products table. The table structure is based on
+-- the columns present in the olist_products_dataset.csv file.
 
 CREATE OR REPLACE TABLE products_raw (
     product_id              VARCHAR,
@@ -55,6 +67,8 @@ CREATE OR REPLACE TABLE products_raw (
     product_width_cm        NUMBER
 );
 
+-- Create raw order payments table. The table structure is based on
+-- the columns present in the olist_order_payments_dataset.csv file.
 
 CREATE OR REPLACE TABLE order_payments_raw (
     order_id                VARCHAR,
@@ -64,6 +78,11 @@ CREATE OR REPLACE TABLE order_payments_raw (
     payment_value           NUMBER(10,2)
 );
 
+
+
+-- Load data from the stage into the raw tables using the COPY INTO command.
+-- The ON_ERROR = 'CONTINUE' option allows the load to continue even if some rows
+-- fail to load due to data issues, which is common when loading raw data.
 
   
 COPY INTO orders_raw
@@ -91,6 +110,9 @@ FROM @raw_stage/olist_order_payments_dataset.csv
 FILE_FORMAT = (FORMAT_NAME = 'retail_csv_format')
 ON_ERROR = 'CONTINUE';
 
+
+-- After loading the data, we can run some queries to verify that the data has been loaded correctly.
+-- For example, we can check the number of rows loaded into each table.
 
 SELECT 'orders'    AS tbl, COUNT(*) AS row_count FROM orders_raw      UNION ALL
 SELECT 'customers' AS tbl, COUNT(*) AS row_count FROM customers_raw     UNION ALL
