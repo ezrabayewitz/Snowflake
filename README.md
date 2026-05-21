@@ -159,21 +159,7 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 
 **Pipeline Workflow:**
 
-```
-CSV Source Files
-      │
-      ▼
-Internal Stage + Named File Format
-      │  COPY INTO
-      ▼
-Raw Tables (Bronze)  ← typed, unmodified source data
-      │  Snowpark Python (native Snowflake execution)
-      ▼
-Transformed Tables (Silver)  ← cleaned, enriched, typed
-      │  SQL
-      ▼
-Reporting Views (Gold)  ← business-ready, query-optimized
-```
+![Pipeline Diagram](/.retail-sales-pipeline/docs/img/retail-sales-pipeline-diagram.png/.)
 
 **Tech Used:** Snowflake SQL · Snowpark Python · Virtual Warehouses · Internal Stages · COPY INTO · SQL Views · ELT architecture
 
