@@ -141,34 +141,11 @@ Raw Data Sources
 - Delivered **5 business-facing reporting views** covering urbanization velocity, GDP leadership, regional trend analysis, country snapshots, and urbanization-GDP correlation
 
 ![Query Result 1](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
-![Query Result 2](./world-population-pipeline/docs/img/urban-growth-countries-query.png)
+![Query Result 2](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
 
 **Pipeline Architecture:**
 
-```
-World Bank CSVs (4 files · free public data · no account required)
-              │
-              │  Snowpipe (manual REFRESH)
-              ▼
-        RAW SCHEMA
-  population_raw / indicators_raw / countries_raw
-  (wide: 1 row per country · 60+ year columns)
-              │
-              │  APPEND_ONLY Streams (CDC)
-              │  Task: every 5 min · fires only if stream has data
-              │  Stored Procedure: UNPIVOT wide → long
-              ▼
-        ANALYTICS SCHEMA
-  country_year_metrics  (long: 1 row per country/year/indicator)
-  Dynamic Tables (5-min lag · dependency-chained):
-    country_profiles → urbanization_growth
-    → gdp_population_efficiency → regional_trends
-              │
-              │  SQL Views
-              ▼
-        REPORTING SCHEMA
-  5 business-facing views (see table below)
-```
+![Pipeline Diagram](./world-population-pipeline/docs/img/world-population-pipeline-diagram.png)
 
 **Key Analytical Findings:**
 
