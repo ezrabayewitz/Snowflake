@@ -159,7 +159,7 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 
 **Pipeline Workflow:**
 
-![Pipeline Diagram](/.retail-sales-pipeline/docs/img/retail-sales-pipeline-diagram.png/.)
+![Pipeline Diagram](./retail-sales-pipeline/docs/img/retail-sales-pipeline-diagram.png/)
 
 **Tech Used:** Snowflake SQL · Snowpark Python · Virtual Warehouses · Internal Stages · COPY INTO · SQL Views · ELT architecture
 
