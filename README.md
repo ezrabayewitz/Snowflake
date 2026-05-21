@@ -221,7 +221,7 @@ World Bank CSVs (4 files · free public data · no account required)
 - Authored **Snowpark Python** transformation logic executed natively within Snowflake — no external compute required
 - Delivered Gold-layer SQL reporting views ready for downstream BI consumption
 
-> 📸 *Screenshot placeholder — add Snowflake worksheet showing reporting view output here*
+![Reporting View](./retail-sales-pipeline/docs/img/retail-reporting-view.png/)
 
 **Pipeline Workflow:**
 
@@ -278,7 +278,7 @@ Reporting Views (Gold)  ← business-ready, query-optimized
 - Applied **Snowflake Horizon** governance: dynamic PII masking, tag-based classification, row access policies, and data quality monitoring
 - Delivered a **Streamlit in Snowflake** regional sales dashboard — interactive, natively hosted, zero external infrastructure
 
-> 📸 *Screenshot placeholder — add Power BI dashboard and Streamlit app screenshots here*
+[View Streamlit Dashboard here](https://youtu.be/ycj-PsSUgQ4)
 
 **Architecture:**
 
@@ -387,9 +387,7 @@ Snowflake/
 
 - [ ] Complete SnowPro Core Certification
 - [ ] Replace ASCII architecture diagrams with visual diagrams (Excalidraw / Lucidchart)
-- [ ] Add Power BI dashboard screenshots to End-to-End Analytics project
 - [ ] Add Streamlit app screenshots to Regional Sales Dashboard
-- [ ] Expand World Population Pipeline with additional World Bank indicators (literacy rate, life expectancy)
 - [ ] Explore dbt Core integration as a declarative SQL transformation layer
 - [ ] Explore Snowflake Data Clean Rooms
 
