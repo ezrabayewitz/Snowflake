@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS population_raw (
     _extra              VARCHAR
 );
 
--- Economic and social indicators (GDP per capita + urbanization)
+-- Economic and social indicators (GDP per capita + urbanization) for each country, from 1960 to 2025.
 -- Same wide format as population — one column per year
 
 CREATE TABLE IF NOT EXISTS indicators_raw (

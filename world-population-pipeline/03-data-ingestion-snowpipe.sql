@@ -1,4 +1,6 @@
--- In this section, the data ingestion environment is set up.
+-- In this section, the script sets up the data ingestion process using Snowpipe. 
+-- It creates file formats for the CSV files we will be uploading, defines an internal stage for storing the files,
+-- and creates Snowpipes to load data into the raw tables we created in the previous step.
 
 
 USE DATABASE WORLD_POPULATION;
@@ -18,7 +20,7 @@ CREATE OR REPLACE FILE FORMAT world_bank_csv
   TRIM_SPACE = TRUE
   COMPRESSION = 'AUTO';
 
--- File format for country metadata file, whivch has 1-line header
+-- File format for country metadata file, which has a different structure and only a 1-line header
 
 CREATE OR REPLACE FILE FORMAT world_bank_metadata_csv
   TYPE = 'CSV'
@@ -29,7 +31,7 @@ CREATE OR REPLACE FILE FORMAT world_bank_metadata_csv
   TRIM_SPACE = TRUE
   COMPRESSION = 'AUTO';
 
--- Internal stage
+-- Internal stage for uploading files.
 
 CREATE STAGE IF NOT EXISTS world_stage
     FILE_FORMAT = (FORMAT_NAME = world_bank_csv)
@@ -41,7 +43,7 @@ CREATE STAGE IF NOT EXISTS world_stage
 -- -------------------------------------------------------
 
 
--- Loading population data
+-- Loading population data 
 
 CREATE OR REPLACE PIPE pop_pipe
   AUTO_INGEST = FALSE
@@ -81,6 +83,9 @@ CREATE OR REPLACE PIPE urban_pipe
   FROM @world_stage/API_SP.URB.TOTL.IN.ZS_DS2_en_csv_v2_121583.csv
   FILE_FORMAT = (FORMAT_NAME = world_bank_csv)
   ON_ERROR = 'CONTINUE';
+
+
+-- Test the pipes by listing the files in the stage and refreshing the pipes to load the data.
 
 LIST @world_stage;
 

@@ -1,6 +1,7 @@
--- In this section, raw data is transformed into analysis-ready tables. This is done
--- through advanced Snowflake features such as Streams, Procedures, and Tasks.
-
+-- In this section, the script transforms the raw data into a more analysis-friendly format. 
+-- It creates a new table in the ANALYTICS schema with a long format (one row per country-year-indicator),
+-- sets up streams to capture new data in the raw tables, 
+-- and defines a stored procedure and task to automatically transform and load new data as it arrives.
 
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA ANALYTICS;
@@ -8,7 +9,7 @@ USE WAREHOUSE WORLD_WH;
 
 
 --------------------------------------------------
--- CREATE ANALYTICS TARGET TABLE (long/unpivoted format)
+-- CREATE ANALYTICS TARGET TABLE (long/unpivoted format) 
 --------------------------------------------------
 
 CREATE OR REPLACE TABLE ANALYTICS.country_year_metrics (
@@ -23,7 +24,7 @@ CREATE OR REPLACE TABLE ANALYTICS.country_year_metrics (
 
 
 --------------------------------------------------
--- STREAMS (detect new rows in raw tables)
+-- STREAMS (detect new rows in raw tables) 
 --------------------------------------------------
 
 CREATE OR REPLACE STREAM RAW.population_stream
@@ -160,7 +161,7 @@ UNPIVOT(value FOR year_col IN (
 
 
 --------------------------------------------------
--- VERIFY
+-- VERIFY ANALYTICS TABLE
 --------------------------------------------------
 
 SELECT indicator_code, COUNT(*) AS row_count
