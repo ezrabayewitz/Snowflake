@@ -306,7 +306,6 @@ Snowflake/
 ## 🔮 What's Next
 
 - [ ] Complete SnowPro Core Certification
-- [ ] Replace ASCII architecture diagrams with visual diagrams (Excalidraw / Lucidchart)
 - [ ] Add Streamlit app screenshots to Regional Sales Dashboard
 - [ ] Explore dbt Core integration as a declarative SQL transformation layer
 - [ ] Explore Snowflake Data Clean Rooms
