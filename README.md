@@ -302,7 +302,7 @@ Tasty Bytes Raw Data     SafeGraph (Marketplace)
 
 **Tech Used:** Dynamic Tables · Star Schema · Dimensional Modeling · Snowflake Marketplace · Snowflake Horizon · Power BI · Streamlit · RBAC · DAG orchestration
 
-| Part | Focus | Key Outcome |
+| File | Focus | Key Outcome |
 |------|-------|-------------|
 | 01—data-profiling.sql | Foundational data layer + RBAC | Region-isolated analyst roles; access-controlled schemas |
 | 02—marketplace-data.sql | SafeGraph geospatial enrichment | Food truck locations enriched with POI metadata |
