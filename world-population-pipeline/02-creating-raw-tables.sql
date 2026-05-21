@@ -1,11 +1,11 @@
 -- In this section, the script creates the raw tables where data will be ingested 
--- into.
+-- into Snowflake. The tables are created in the RAW schema of our WORLD_POPULATION database.
 
 USE DATABASE WORLD_POPULATION;
 USE SCHEMA RAW;
 USE WAREHOUSE WORLD_WH;
 
--- 
+-- Country-level information (country code, region, income group, etc.)
 
 CREATE OR REPLACE TABLE countries_raw (
     country_code        VARCHAR,
@@ -16,7 +16,8 @@ CREATE OR REPLACE TABLE countries_raw (
     _extra              VARCHAR
 );
 
--- Population by country and year
+-- Population data for each country, from 1960 to 2025 (projected). The data is in a wide format,
+-- with one column per year. The indicator_name column specifies the type of population data.
 
 CREATE TABLE IF NOT EXISTS population_raw (
     country_name        VARCHAR,
