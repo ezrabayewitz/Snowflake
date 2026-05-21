@@ -141,11 +141,11 @@ Raw Data Sources
 - Delivered **5 business-facing reporting views** covering urbanization velocity, GDP leadership, regional trend analysis, country snapshots, and urbanization-GDP correlation
 
 ![Query Result 1](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
-![Query Result 2](./world-population-pipeline/docs/img/world-population-pipeline-diagram.png)
+![Query Result 2](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
 
 **Pipeline Architecture:**
 
-![Pipeline Diagram](./world-population-pipeline/docs/img/2023-gdp-leaders-query.png)
+![Pipeline Diagram](./world-population-pipeline/docs/img/world-population-pipeline-diagram.png)
 
 **Key Analytical Findings:**
 
