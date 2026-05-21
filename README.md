@@ -221,7 +221,7 @@ World Bank CSVs (4 files · free public data · no account required)
 - Authored **Snowpark Python** transformation logic executed natively within Snowflake — no external compute required
 - Delivered Gold-layer SQL reporting views ready for downstream BI consumption
 
-> 📸 *Screenshot placeholder — add Snowflake worksheet showing reporting view output here*
+![Reporting View](./retail-sales-pipeline/docs/img/retail-reporting-view.png/)
 
 **Pipeline Workflow:**
 
