@@ -278,7 +278,7 @@ Reporting Views (Gold)  ← business-ready, query-optimized
 - Applied **Snowflake Horizon** governance: dynamic PII masking, tag-based classification, row access policies, and data quality monitoring
 - Delivered a **Streamlit in Snowflake** regional sales dashboard — interactive, natively hosted, zero external infrastructure
 
-> 📸 *Screenshot placeholder — add Power BI dashboard and Streamlit app screenshots here*
+[View Streamlit Dashboard here](https://youtu.be/ycj-PsSUgQ4)
 
 **Architecture:**
 
