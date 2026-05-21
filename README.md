@@ -304,11 +304,11 @@ Tasty Bytes Raw Data     SafeGraph (Marketplace)
 
 | Part | Focus | Key Outcome |
 |------|-------|-------------|
-| Part 1 — Data Profiling | Foundational data layer + RBAC | Region-isolated analyst roles; access-controlled schemas |
-| Part 2 — Marketplace Data | SafeGraph geospatial enrichment | Food truck locations enriched with POI metadata |
-| Part 3 — Star Schema | Dynamic Tables for auto-refresh | Self-updating fact/dim model consumed by Power BI |
-| Part 4 — Data Governance | Horizon PII masking + policies | Sensitive fields masked; data quality alerts active |
-| Streamlit App | Regional Sales Dashboard | Interactive monthly sales analysis across global regions |
+| 01—data-profiling.sql | Foundational data layer + RBAC | Region-isolated analyst roles; access-controlled schemas |
+| 02—marketplace-data.sql | SafeGraph geospatial enrichment | Food truck locations enriched with POI metadata |
+| 03—data-transformation.sql | Dynamic Tables for auto-refresh | Self-updating fact/dim model consumed by Power BI |
+| 04—data-governance.sql | Horizon PII masking + policies | Sensitive fields masked; data quality alerts active |
+| 05-streamlit-dashboard.py | Regional Sales Dashboard | Interactive monthly sales analysis across global regions |
 
 ---
 
@@ -351,11 +351,11 @@ Snowflake/
 │   └── docs/
 │
 ├── snowflake-powerbi-analytics/        ← 📊 Star schema · Power BI · Streamlit · Horizon
-│   ├── Part-1/   ← Data Profiling + RBAC
-│   ├── Part-2/   ← Marketplace Data (SafeGraph)
-│   ├── Part-3/   ← Star Schema with Dynamic Tables
-│   ├── Part-4/   ← Data Governance (Horizon)
-│   └── Streamlit/   ← Regional Sales Dashboard
+│   ├── 01—data-profiling.sql
+│   ├── 02—marketplace-data.sql
+│   ├── 03—data-transformation.sql
+│   ├── 04—data-governance.sql
+│   └── 05-streamlit-dashboard.py
 │   └── docs/
 │
 ├── Zero-to-Snowflake/                  ← 📚 Core quickstart labs (guided)
