@@ -32,21 +32,12 @@ To gain hands-on experience in the following areas:
 ```
 End-to-End Analytics with Snowflake and Power BI/
 ├── README.md
-├── Part-1/
-│   ├── README.md
-│   └── queries.sql
-├── Part-2/
-│   ├── README.md
-│   └── queries.sql
-├── Part-3/
-│   ├── README.md
-│   └── queries.sql
-├── Part-4/
-│   ├── README.md
-│   └── queries.sql
-├── Streamlit/
-│   ├── README.md
-│   └── queries.sql
+├── 01-data-profiling.sql
+├── 02-marketplace-data.sql
+├── 03-data-transformation.sql
+├── 04-data-governance.sql
+├── 05-streamlit-dashboard.py
+├── docs/
 
 ```
 

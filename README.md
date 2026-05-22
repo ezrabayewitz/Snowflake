@@ -286,7 +286,7 @@ Snowflake/
 │   └── Part-5/   ← Apps & Collaboration
 │   └── docs/
 │
-├── notes/                              ← 📝 SnowPro Core study notes
+├── docs/                              ← 📝 SnowPro Core study notes
 └── README.md
 ```
 
