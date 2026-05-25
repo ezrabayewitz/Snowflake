@@ -278,7 +278,7 @@ Snowflake/
 │   └── 05-streamlit-dashboard.py
 │   └── docs/
 │
-├── Zero-to-Snowflake/                  ← 📚 Core quickstart labs (guided)
+├── zero-to-snowflake/                  ← 📚 Core quickstart labs (guided)
 │   ├── Part-1/   ← Setup & Fundamentals
 │   ├── Part-2/   ← Simple Data Pipeline
 │   ├── Part-3/   ← Cortex AI
