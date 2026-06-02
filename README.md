@@ -24,7 +24,6 @@ Flagship work includes a **World Population & Geographic Trends Pipeline** inges
 
 ![Pipeline DAG](./world-population-pipeline/docs/img/dynamic-table.png)
 ![Query Results](./world-population-pipeline/docs/img/urbanization-vs-gdp-query.png)
-![View Streamlit Dashboard here](https://youtu.be/ycj-PsSUgQ4)
 
 ---
 
