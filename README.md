@@ -302,19 +302,9 @@ Snowflake/
 
 ---
 
-## 🔮 What's Next
-
-- [ ] Complete SnowPro Core Certification
-- [ ] Add Streamlit app screenshots to Regional Sales Dashboard
-- [ ] Explore dbt Core integration as a declarative SQL transformation layer
-- [ ] Explore Snowflake Data Clean Rooms
-
----
-
 ## 🤝 Connect
 
 - 💼 **LinkedIn:** [linkedin.com/in/ezra-bayewitz](https://www.linkedin.com/in/ezra-bayewitz)
-- 🌐 **Portfolio:** Coming soon
 
 ---
 
