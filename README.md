@@ -233,7 +233,7 @@ Tasty Bytes Raw Data     SafeGraph (Marketplace)
 
 ### 4. 📚 Zero to Snowflake — *Core Quickstart Series*
 
-**[View Project →](./Zero-to-Snowflake/)**
+**[View Project →](./zero-to-snowflake/)**
 
 A structured five-part guided series covering Snowflake fundamentals through hands-on labs — building both platform fluency and SnowPro Core certification readiness.
 
