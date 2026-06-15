@@ -296,7 +296,7 @@ Snowflake/
 ## 🎓 Certification
 
 **SnowPro Core Certification — Snowflake**
-- Status: 🟡 In Progress
+- Status: Passed
 - Candidate: Ezra Bayewitz
 - Domains: Virtual Warehouses · Data Loading & Transformation · Performance Optimization · Security & Governance · Semi-Structured Data · Cortex AI · Data Sharing
 
